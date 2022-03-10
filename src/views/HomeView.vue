@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <section class="home">
     <Hero pageTitle="Developer + Designer" />
-  </div>
+  </section>
 </template>
 
 <script>
