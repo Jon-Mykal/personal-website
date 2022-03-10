@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <Hero pageTitle="Design"/>
     </div>
 </template>
 
