@@ -3,7 +3,8 @@
     <Hero pageTitle="Get In Touch"/>
     <section class="contact">
     <h2>Send Me A Message</h2>
-    <form name="contactForm" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+    <form action="/contact?sent=true" name="contactForm" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contactForm">
       <section class="form-group">
          <label for="">Name</label>
          <input type="text" placeholder="E.g. Jane Done" name="contactName">
