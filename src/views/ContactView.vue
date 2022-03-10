@@ -3,18 +3,18 @@
     <Hero pageTitle="Get In Touch"/>
     <section class="contact">
     <h2>Send Me A Message</h2>
-    <form action="">
+    <form name="contactForm" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
       <section class="form-group">
          <label for="">Name</label>
-         <input type="text" placeholder="E.g. Jane Done">
+         <input type="text" placeholder="E.g. Jane Done" name="contactName">
       </section>
       <section class="form-group">
          <label for="">Email</label>
-         <input type="text" placeholder="E.g. someone@example.com">
+         <input type="text" placeholder="E.g. someone@example.com" name="contactEmail">
       </section>
       <section class="form-group">
          <label for="">Subject</label>
-         <select name="" id="">
+         <select name="subjectLine" id="">
            <option v-for="(subject, index) in subjectLines" :key="index" :value="subject.value">
              {{ subject.text }}
            </option>
