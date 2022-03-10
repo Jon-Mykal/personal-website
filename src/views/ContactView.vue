@@ -1,5 +1,7 @@
 <template>
-  <section class="contact">
+<section>
+    <Hero pageTitle="Get In Touch"/>
+    <section class="contact">
     <h2>Send Me A Message</h2>
     <form action="">
       <section class="form-group">
@@ -22,27 +24,27 @@
          <label for="message">Message</label>
          <textarea name="message"></textarea>
       </section>
+      <button type="submit">Send Message</button>
     </form>
   </section>
+</section>
 </template>
 
 <script>
 import { reactive, toRefs } from 'vue';
 
 export default {
-  setup() {
-    const pageData = reactive({
-      subjectLines : [
-        { text: "-- Select a subject line --", value:""},
-        { text: "Work Arrangement", value: "work" },
-        { text: "Freelance Project", value: "project"},
-        { text: "Other/General", value:"other"}
-      ]
-    });
-
-
-    return {...toRefs(pageData)}
-  }
+    setup() {
+        const pageData = reactive({
+            subjectLines: [
+                { text: "-- Select a subject line --", value: "" },
+                { text: "Work Arrangement", value: "work" },
+                { text: "Freelance Project", value: "project" },
+                { text: "Other/General", value: "other" }
+            ]
+        });
+        return { ...toRefs(pageData) };
+    }
 }
 </script>
 
