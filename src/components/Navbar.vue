@@ -71,7 +71,7 @@ export default {
     border-color: transparent;
 }
 
-.navbar-toggler {
+.navbar-toggler, .navbar-toggler:focus {
     box-shadow: none;
 }
 </style>
