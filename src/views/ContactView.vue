@@ -1,5 +1,13 @@
 <template>
 <section>
+      <Dialog header="Status" :style="{width: '30vw'}" v-model:visible="showPopup" :modal="true">
+        <p :innerHTML="statusMessage">
+
+        </p>
+        <template #footer>
+            <button class="btn btn-primary rounded-pill px-4" @click="showPopup = false">Ok</button>
+        </template>
+    </Dialog>
     <Hero pageTitle="Get In Touch"/>
     <section class="contact py-3 mt-1">
     <h2>Send Me A Message</h2>
@@ -59,7 +67,10 @@ export default {
             email: "",
             currentSubjectLine: "",
             message: "", 
-            formSubmitted: false
+            formSubmitted: false,
+            showPopup: false,
+            statusMessage: "",
+            success: false
         });
 
         const contactForm = ref(null);
@@ -108,10 +119,16 @@ export default {
           });
           let encodedData = formFields.join("&");
           axios.post("/", encodedData, { header: { "Content-Type": "application/x-www-form-urlencoded" }}).then((res) => {
-            console.log(res);
+            pageData.showPopup = true;
+            pageData.success = true;
+            pageData.statusMessage = "Your message was sent. Thank you!"
+            // console.log(res);
           })
           .catch(err => {
-            console.log(err);
+            pageData.showPopup = true;
+            pageData.success = false;
+            pageData.statusMessage = "Your message was not sent. Reach me via any other method listed on this page."
+            // console.log(err);
           }) 
         };
 
