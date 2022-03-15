@@ -1,6 +1,7 @@
 <template>
-        <h1>{{pageTitle}}</h1>
-
+        <section class="bg-secondary hero-main d-flex justify-content-center align-items-center">
+            <h1>{{pageTitle}}</h1>
+        </section>
 </template>
 
 <script>
@@ -20,5 +21,7 @@ export default {
 </script>
 
 <style scoped>
-
+.hero-main {
+    height: 15rem;
+}
 </style>
