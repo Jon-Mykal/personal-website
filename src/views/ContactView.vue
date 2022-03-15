@@ -8,7 +8,7 @@
     </p>
     <section class="d-flex justify-content-center">
       <section class="form-wrapper py-4 px-2 border border-3 shadow rounded-plus col-md-9 col-sm-10 col-11 col-lg-4 mt-3">
-        <form class="form-horizontal px-md-4 mx-2" action="/contact?sent=true" name="contactForm" method="POST" 
+        <form class="form-horizontal px-md-4 mx-2"  name="contactForm" ref="contactForm" method="POST" 
         data-netlify="true" 
         data-netlify-honeypot="bot-field"
         @submit.prevent="sendMessage">
@@ -16,13 +16,13 @@
           <section class="form-group mb-2 pb-2">
             <label for="" class="form-label d-flex">Name</label>
             <input @blur="fields.fullName.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('fullName') }" class="form-control py-275" type="text" placeholder="E.g. Jane Done" name="contactName" v-model="fullName">
-            <small v-if="!fieldIsValid('fullName')" class="d-flex">tot</small>
+            <small v-if="!fieldIsValid('fullName')" class="d-flex error">{{ showValMsg('fullName') }}</small>
           </section>
           <section class="form-group mb-2 pb-2">
             <label for="contactEmail" class="form-label d-flex">Email</label>
             <input @blur="fields.email.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('email') }" class="form-control py-275" type="email" placeholder="E.g. someone@example.com" name="contactEmail" v-model="email">
             <!-- <small v-if="fields.email.meta.touched && (vldtr.email && (!vldtr.email.valid))" class="d-flex">tot</small> -->
-            <small v-if="!fieldIsValid('email')" class="d-flex">tot</small>
+            <small v-if="!fieldIsValid('email')" class="d-flex error">{{ showValMsg('email') }}</small>
           </section>
           <section class="form-group mb-2 pb-2">
             <label for="" class="form-label d-flex">Subject</label>
@@ -31,12 +31,12 @@
                 {{ subject.text }}
               </option>
             </select>
-            <small v-if="!fieldIsValid('subjectLine')"  class="d-flex">tot</small>
+            <small v-if="!fieldIsValid('subjectLine')"  class="d-flex error">{{ showValMsg('subjectLine') }}</small>
           </section>
           <section class="form-group mb-2 pb-2">
             <label for="message" class="form-label d-flex">Message</label>
             <textarea @blur="fields.message.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('message') }" class="form-control" id="message" name="message" v-model="message"></textarea>
-            <small v-if="!fieldIsValid('message')"  class="d-flex">tot</small>
+            <small v-if="!fieldIsValid('message')"  class="d-flex error">{{ showValMsg('message') }}</small>
           </section>
           <button class="btn btn-secondary w-100 rounded-pill py-275 text-uppercase" type="submit" :disabled="!canSubmit">Send Message</button>
         </form>
@@ -49,6 +49,7 @@
 <script>
 import { computed, onMounted, reactive, toRefs, ref, watch } from 'vue';
 import { useField, useForm } from 'vee-validate';
+import axios from 'axios';
 import * as yup from 'yup';
 
 export default {
@@ -60,6 +61,8 @@ export default {
             message: "", 
             formSubmitted: false
         });
+
+        const contactForm = ref(null);
 
           const subjectLines =  [
                 { text: "-- Select a subject line --", value: "" },
@@ -74,7 +77,7 @@ export default {
         const valSchema = yup.object({
           fullName: yup.string().required().label("Name"),
           email: yup.string().required().email().label("Email"),
-          subjectLine: yup.string().required().label("Subject Line"),
+          subjectLine: yup.string().required().label("Subject"),
           message: yup.string().required().label("Message")
         });
 
@@ -96,6 +99,20 @@ export default {
           if (!canSubmit.value) {
             return;
           }
+          const formData = new FormData(contactForm.value);
+          console.log(formData);
+          var formFields = []
+          formData.forEach((val, key) =>  {
+            let field = `${encodeURIComponent(key)}=${encodeURIComponent(val)}`
+            formFields.push(field);
+          });
+          let encodedData = formFields.join("&");
+          axios.post("/", encodedData, { header: { "Content-Type": "application/x-www-form-urlencoded" }}).then((res) => {
+            console.log(res);
+          })
+          .catch(err => {
+            console.log(err);
+          }) 
         };
 
         // Grab fields to get individual meta-data
@@ -109,7 +126,7 @@ export default {
 
         const fieldIsValid = computed(() => {
           return (fieldName) => {
-              console.log(fields[fieldName].meta.touched, vldtr.value[fieldName]);
+              // console.log(fields[fieldName].meta.touched, vldtr.value[fieldName]);
               if (fields[fieldName].meta.touched) {
                 if (vldtr.value[fieldName]) {
                   return vldtr.value[fieldName].valid
@@ -121,10 +138,22 @@ export default {
           };
         });
 
+        const showValMsg = computed(() => {
+          return (fieldName) => {
+            // vldtr.value[fieldName];
+            const err = fields[fieldName].errorMessage;
+            if (err.value) {
+              return err.value.replace('"', '');
+            }
+            return "";
+          }
+        })
+
         // const hasBeenTouched = (fieldName) => {
         //   return useField(fieldName).meta.touched;
         // }
         // Watch for changes
+        
         watch(pageData, async () => {
           formConfig.setValues({
             fullName: pageData.fullName,
@@ -134,9 +163,12 @@ export default {
           });
           vldtr.value = (await formConfig.validate()).results;
           canSubmit.value = formConfig.meta.value.valid;
-          // console.log(vldtr.value);
         });
         
+        onMounted(async () => {
+          await formConfig.validate();
+          
+        });
         // If code was loaded
         // onMounted(async () => {
         //   formConfig.setValues({
@@ -149,7 +181,7 @@ export default {
         //   canSubmit.value = formConfig.meta.value.valid;
         // })
         
-        return { ...toRefs(pageData), sendMessage, canSubmit, subjectLines, formConfig, vldtr, fields, fieldIsValid };
+        return { ...toRefs(pageData), sendMessage, canSubmit, subjectLines, formConfig, vldtr, fields, fieldIsValid, showValMsg, contactForm };
     }
 }
 </script>
@@ -165,5 +197,18 @@ export default {
 
 #message {
   height: 8rem;
+}
+
+.error {
+  color: rgb(226, 5, 5);
+}
+
+.p-invalid {
+  border-color: rgb(226, 5, 5);
+}
+
+.btn:disabled {
+  pointer-events: initial;
+  cursor: no-drop!important;
 }
 </style>
