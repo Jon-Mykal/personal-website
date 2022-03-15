@@ -86,12 +86,12 @@ export default {
         // Handle submission
         const sendMessage =  async () => {
           pageData.formSubmitted = true;
-          formConfig.setValues({
-            fullName: pageData.fullName,
-            email: pageData.email,
-            subjectLine: pageData.currentSubjectLine,
-            message: pageData.message
-          });
+          // formConfig.setValues({
+          //   fullName: pageData.fullName,
+          //   email: pageData.email,
+          //   subjectLine: pageData.currentSubjectLine,
+          //   message: pageData.message
+          // });
 
           if (!canSubmit.value) {
             return;
@@ -137,6 +137,17 @@ export default {
           // console.log(vldtr.value);
         });
         
+        // If code was loaded
+        // onMounted(async () => {
+        //   formConfig.setValues({
+        //     fullName: pageData.fullName,
+        //     email: pageData.email,
+        //     subjectLine: pageData.currentSubjectLine,
+        //     message: pageData.message
+        //   });
+        //   vldtr.value = (await formConfig.validate()).results;
+        //   canSubmit.value = formConfig.meta.value.valid;
+        // })
         
         return { ...toRefs(pageData), sendMessage, canSubmit, subjectLines, formConfig, vldtr, fields, fieldIsValid };
     }
