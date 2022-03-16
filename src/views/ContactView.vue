@@ -1,5 +1,5 @@
 <template>
-<section>
+<section class="contact mb-4">
       <Dialog header="Status" :style="{width: '30vw'}" v-model:visible="showPopup" :modal="true">
         <p :innerHTML="statusMessage">
 
@@ -9,7 +9,8 @@
         </template>
     </Dialog>
     <Hero pageTitle="Get In Touch"/>
-    <section class="contact py-3 mt-1">
+    <section class="contact-channels"></section>
+    <section class="contact-message py-3 mt-1">
     <h2>Send Me A Message</h2>
     <p>
       If you have any queries, just shoot me a message.
@@ -23,7 +24,7 @@
           <input type="hidden" name="form-name" value="contactForm">
           <section class="form-group mb-2 pb-2">
             <label for="" class="form-label d-flex">Name</label>
-            <input @blur="fields.fullName.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('fullName') }" class="form-control py-275" type="text" placeholder="E.g. Jane Done" name="contactName" v-model="fullName">
+            <input @blur="fields.fullName.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('fullName') }" class="form-control py-275" type="text" placeholder="E.g. Jane Doe" name="contactName" v-model="fullName">
             <small v-if="!fieldIsValid('fullName')" class="d-flex error">{{ showValMsg('fullName') }}</small>
           </section>
           <section class="form-group mb-2 pb-2">
@@ -111,8 +112,8 @@ export default {
             return;
           }
           const formData = new FormData(contactForm.value);
-          console.log(formData);
-          var formFields = []
+          // console.log(formData);
+          var formFields = [];
           formData.forEach((val, key) =>  {
             let field = `${encodeURIComponent(key)}=${encodeURIComponent(val)}`
             formFields.push(field);
@@ -121,7 +122,11 @@ export default {
           axios.post("/", encodedData, { header: { "Content-Type": "application/x-www-form-urlencoded" }}).then((res) => {
             pageData.showPopup = true;
             pageData.success = true;
-            pageData.statusMessage = "Your message was sent. Thank you!"
+            pageData.statusMessage = "Your message was sent. Thank you!";
+            pageData.fullName = "";
+            pageData.email = "";
+            pageData.message = "";
+            pageData.currentSubjectLine = "";
             // console.log(res);
           })
           .catch(err => {
@@ -227,5 +232,10 @@ export default {
 .btn:disabled {
   pointer-events: initial;
   cursor: no-drop!important;
+}
+
+.contact-channels {
+  background: #bebebe;
+  height: 20rem;
 }
 </style>
