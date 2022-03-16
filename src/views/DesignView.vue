@@ -1,7 +1,9 @@
 <template>
-    <div>
+    <section class="design">
         <Hero pageTitle="Design"/>
-    </div>
+        <section class="design-tools"></section>
+        <section class="design-work"></section>
+    </section>
 </template>
 
 <script>
@@ -14,6 +16,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.design-tools {
+    height: 25rem;
+    background: #bcbcbc;
+}
 
+.design-work {
+    background: #f0f0f0;
+    height: 30rem;
+}
 </style>
