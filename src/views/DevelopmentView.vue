@@ -1,7 +1,9 @@
 <template>
-    <div>
+    <section class="development">
         <Hero pageTitle="Development"/>
-    </div>
+        <section class="tech-stacks"></section>
+        <section class="dev-work"></section>
+    </section>
 </template>
 
 <script>
@@ -12,6 +14,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.tech-stacks {
+    height: 25rem;
+    background: #bcbcbc;
+}
 
+.dev-work {
+    background: #f0f0f0;
+    height: 30rem;
+}
 </style>
