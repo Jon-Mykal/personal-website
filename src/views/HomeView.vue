@@ -1,7 +1,9 @@
 <template>
-  <div class="home">
+  <section class="home">
     <Hero pageTitle="Developer + Designer" />
-  </div>
+    <section class="bio-overview"></section>
+    <section class="skillsets"></section>
+  </section>
 </template>
 
 <script>
@@ -14,3 +16,18 @@ export default {
   }
 }
 </script>
+
+<style>
+.bio-overview,
+.skillsets {
+height: 25rem;
+}
+
+.bio-overview {
+  background: #dadada;
+}
+
+.skillsets {
+  background: #afafaf;
+}
+</style>
