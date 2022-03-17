@@ -1,24 +1,41 @@
 <template>
   <section class="home">
     <Hero pageTitle="Developer + Designer" />
-    <section class="bio-overview">
-      <h3 class="pt-5">A Little About Me</h3>
-      <section class="row">
-        <section class="col-6"></section>
-              <section class="col-6"></section>
+    <section class="bio-overview py-3">
+      <h3 class="py-3">A Little About Me</h3>
+      <section class="row pb-2">
+        <section class="col-6 col-sm-12"></section>
+              <section class="col-6 col-sm-12"></section>
       </section>
     </section>
-    <section class="skillsets">
-      <h3 class="pt-5">What Can I Do?</h3>
-      <section class="row">
-        <section class="col-6">
-          <p>
-            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. 
-            Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. 
-            A small river named Duden flows by their place and supplies it with the necessary regelialia.
-          </p>
+    <section class="skillsets py-3">
+      <h3 class="py-3">What Can I Do?</h3>
+      <section class="container-sm">
+        <section class="row pb-2">
+          <section class="col-sm-12 col-md-6 pb-5">
+            <section class="wrapper d-flex px-3 flex-column align-items-center pb-3">
+              <section class="circle rounded-circle"></section>
+              <p class="pt-5">
+              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. 
+              Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. 
+              A small river named Duden flows by their place and supplies it with the necessary regelialia.
+            </p>
+            
+            </section>
+            <router-link class="btn btn-primary rounded-pill px-4" :to="{ name: 'development' }">SEE MORE</router-link>
+          </section>
+          <section class="col-sm-12 col-md-6">
+            <section class="wrapper d-flex px-3 flex-column align-items-center pb-3">
+              <section class="circle rounded-circle"></section>
+              <p class="pt-5">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. 
+                Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. 
+                A small river named Duden flows by their place and supplies it with the necessary regelialia.
+              </p>
+            </section>
+            <router-link class="btn btn-primary rounded-pill px-4" :to="{ name: 'design' }">SEE MORE</router-link>
+          </section>
         </section>
-        <section class="col-6"></section>
       </section>
     </section>
   </section>
@@ -26,7 +43,7 @@
 
 <script>
 // @ is an alias to /src
-import { PdfViewer, Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, Annotation, FormDesigner, FormFields } from '@syncfusion/ej2-pdfviewer';
+
 // import '../node_modules/@syncfusion/ej2-pdfviewer/styles/fabric.css';
 // import pdf from '../assets/Test.pdf'
 import {ref} from 'vue';
@@ -36,32 +53,18 @@ export default {
 
   },
   setup() {
-    const serviceUrl = ref("https://ej2services.syncfusion.com/production/web-services/api/pdfviewer");
-    const documentPath = ref("/docs/Test.pdf");
-    // console.log(require('../assets/Test.pdf'));
-    const pdfviewer = new PdfViewer({ serviceUrl: "../assets"});
-    // pdfviewer.appendTo("#pdfViewer");
-    
-    const loadPdf = () => {
-      pdfviewer.appendTo("#pdfViewer");
-      // let viewer = document.getElementById('pdfViewer').ej2_instances[0];
-    
-      pdfviewer.load("Test.pdf", null);
-    }
 
-    return { serviceUrl, documentPath, loadPdf};
-  },
-  provide: {
-    PdfViewer: [Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, Annotation, FormDesigner, FormFields]
+
+    return { };
   }
 }
 </script>
 
 <style>
-.bio-overview,
+/* .bio-overview,
 .skillsets {
-height: 25rem;
-}
+height: 30rem;
+} */
 
 .bio-overview {
   background: #dadada;
@@ -71,7 +74,9 @@ height: 25rem;
   background: #afafaf;
 }
 
-	#pdfViewer {
-		height: 640px;
-	}
+.circle {
+  height: 10rem;
+  width: 10rem;
+  background: white;
+}
 </style>
