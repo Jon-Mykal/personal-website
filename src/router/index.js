@@ -52,7 +52,7 @@ const router = createRouter({
       return savedPosition;
     }
     else {
-      return {lef: 0, top: 0 }
+      return {left: 0, top: 0 }
     }
   }
 })
