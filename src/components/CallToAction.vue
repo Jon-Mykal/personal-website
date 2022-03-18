@@ -27,9 +27,6 @@ export default {
 </script>
 
 <style scoped>
-.cta-main {
-    /* heigkht: 15rem; */
-}
 
 .wrapper {
     /* max-height: 100%; */
