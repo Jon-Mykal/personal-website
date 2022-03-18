@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import Hero from "@/components/Hero.vue"
+import CallToAction from "@/components/CallToAction.vue"
 
 // App Styling
 // import 'primeflex/primeflex.css'
@@ -22,6 +23,7 @@ import ProgressSpinner from 'primevue/progressspinner';
 const app = createApp(App);
 // Global Component Registrations
 app.component('Hero', Hero);
+app.component('CallToAction', CallToAction);
 app.component('Dialog', Dialog);
 app.component('BlockUI', BlockUI);
 app.component('ProgressSpinner', ProgressSpinner);
