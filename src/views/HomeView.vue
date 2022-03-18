@@ -81,7 +81,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* .bio-overview,
 .skillsets {
 height: 30rem;
