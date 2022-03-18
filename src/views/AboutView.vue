@@ -1,9 +1,10 @@
 <template>
-  <div class="about">
+  <section class="about">
     <Hero pageTitle="About Me"/>
     <section class="bio"></section>
     <section class="learning"></section>
-  </div>
+    <CallToAction headerTitle="Ready To Connect?" />
+  </section>
 </template>
 
 <script>
