@@ -11,7 +11,7 @@
             </section>
           </section>
           <section class="col-md-6 col-sm-12">
-            <section class="wrapper d-flex px-3 flex-column pb-3 text-start">
+            <section class="wrapper d-flex px-3 flex-column pb-3 text-md-start">
               <h5>Heading</h5>
               <p class="pt-3">
                 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. 
@@ -19,7 +19,7 @@
                 A small river named Duden flows by their place and supplies it with the necessary regelialia.
               </p>
             </section>
-            <section class="d-flex px-3">
+            <section class="d-flex px-3 justify-content-center justify-content-sm-start">
               <router-link class="btn btn-primary rounded-pill px-4 gw--fs-7" :to="{ name: 'about' }">READ MORE</router-link>
             </section>
           </section>
