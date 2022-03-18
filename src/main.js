@@ -19,6 +19,7 @@ import Dialog from 'primevue/dialog';
 import Toast from 'primevue/toast';
 import BlockUI from 'primevue/blockui';
 import ProgressSpinner from 'primevue/progressspinner';
+import Carousel from 'primevue/carousel';
 
 const app = createApp(App);
 // Global Component Registrations
@@ -28,4 +29,5 @@ app.component('Dialog', Dialog);
 app.component('BlockUI', BlockUI);
 app.component('ProgressSpinner', ProgressSpinner);
 app.component('Toast', Toast);
+app.component('Carousel', Carousel);
 app.use(router).use(PrimeVue).use(ToastService).mount('#app');
