@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-light mt-4">
+    <footer class="bg-light">
         <section class="py-3 container-fluid d-flex justify-content-around bg-light align-items-center">
             <p class="p-no-margin">
                 &copy; <span>{{ copyrightYear}}</span> Gregg Wong
