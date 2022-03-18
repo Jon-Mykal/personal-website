@@ -19,7 +19,7 @@
                 A small river named Duden flows by their place and supplies it with the necessary regelialia.
               </p>
             </section>
-            <section class="d-flex px-3 justify-content-center justify-content-sm-start">
+            <section class="d-flex px-3 justify-content-center justify-content-md-start justify-content-sm-center">
               <router-link class="btn btn-primary rounded-pill px-4 gw--fs-7" :to="{ name: 'about' }">READ MORE</router-link>
             </section>
           </section>
