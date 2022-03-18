@@ -3,6 +3,7 @@
         <Hero pageTitle="Development"/>
         <section class="tech-stacks"></section>
         <section class="dev-work"></section>
+        <CallToAction headerTitle="Let's Build Something!" />
     </section>
 </template>
 
