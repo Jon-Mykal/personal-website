@@ -3,6 +3,7 @@
         <Hero pageTitle="Design"/>
         <section class="design-tools"></section>
         <section class="design-work"></section>
+        <CallToAction headerTitle="Let's Design Something!" />
     </section>
 </template>
 
