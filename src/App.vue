@@ -37,4 +37,8 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.gw--fs-7 {
+  font-size: .875rem!important;
+}
 </style>
