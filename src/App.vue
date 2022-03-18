@@ -41,4 +41,15 @@ nav a.router-link-exact-active {
 .gw--fs-7 {
   font-size: .875rem!important;
 }
+
+ li.p-carousel-indicator {
+  margin-right: 0.875rem!important;
+  
+}
+
+li.p-carousel-indicator button.p-link {
+  width: 1rem!important;
+  height: 1rem!important;
+  border-radius: 10px!important;
+}
 </style>
