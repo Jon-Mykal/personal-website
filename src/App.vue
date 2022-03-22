@@ -52,4 +52,9 @@ li.p-carousel-indicator button.p-link {
   height: 1rem!important;
   border-radius: 10px!important;
 }
+
+/** Carousels */
+.tools-used {
+    margin-bottom: -3.5rem;
+}
 </style>
