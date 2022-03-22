@@ -1,80 +1,87 @@
 <template>
 <section class="contact mb-4">
-      <Dialog header="Status" :style="{width: '30vw'}" v-model:visible="showPopup" :modal="true">
-        <p :innerHTML="statusMessage">
+      
+      <Toast position="bottom-center"/>
+      <!-- <Dialog header="Status" :style="{width: '50%', maxWidth: '40rem'}" v-model:visible="showPopup" :modal="true">
+        <ProgressSpinner c />
 
-        </p>
         <template #footer>
             <button class="btn btn-primary rounded-pill px-4" @click="showPopup = false">Ok</button>
         </template>
-    </Dialog>
-    <Hero pageTitle="Get In Touch"/>
-    <section class="contact-channels py-5">
-      <section class="container justify-content-center d-flex w-75">
-        <section class="row gx-5">
-          <section class="col-12 col-sm-4" v-for="channel in contactChannels" :key="channel.name" @click="navigateToUrl(channel.url)">
-            <section class="wrapper d-flex px-3 flex-column align-items-center pb-2 channel">
-              <section class="circle rounded-circle"></section>
-              <h5 class="pt-3">{{ channel.name }}</h5>
-              
+    </Dialog> -->
+      <Hero pageTitle="Get In Touch"/>
+      <section class="contact-channels py-5">
+        <section class="container justify-content-center d-flex w-75">
+          <section class="row gx-5">
+            <section class="col-12 col-sm-4" v-for="channel in contactChannels" :key="channel.name" @click="navigateToUrl(channel.url)">
+              <section class="wrapper d-flex px-3 flex-column align-items-center pb-2 channel">
+                <section class="circle rounded-circle"></section>
+                <h5 class="pt-3">{{ channel.name }}</h5>
+                
+              </section>
             </section>
           </section>
         </section>
       </section>
-    </section>
-    <section class="contact-message py-3 mt-1">
-    <h2>Send Me A Message</h2>
-    <p>
-      If you have any queries, just shoot me a message.
-    </p>
-    <section class="d-flex justify-content-center">
-      <section class="form-wrapper py-4 px-2 border border-3 shadow rounded-plus col-md-8 col-sm-10 col-11 col-lg-6 col-xl-5 col-xxl-4 mt-3">
-        <form class="form-horizontal px-md-4 mx-2"  name="contactForm" ref="contactForm" method="POST" 
-        data-netlify="true" 
-        data-netlify-honeypot="bot-field"
-        @submit.prevent="sendMessage">
-          <input type="hidden" name="form-name" value="contactForm">
-          <section class="form-group mb-2 pb-2">
-            <label for="" class="form-label d-flex">Name</label>
-            <input @blur="fields.fullName.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('fullName') }" class="form-control py-275" type="text" placeholder="E.g. Jane Doe" name="contactName" v-model="fullName">
-            <small v-if="!fieldIsValid('fullName')" class="d-flex error">{{ showValMsg('fullName') }}</small>
-          </section>
-          <section class="form-group mb-2 pb-2">
-            <label for="contactEmail" class="form-label d-flex">Email</label>
-            <input @blur="fields.email.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('email') }" class="form-control py-275" type="email" placeholder="E.g. someone@example.com" name="contactEmail" v-model="email">
-            <!-- <small v-if="fields.email.meta.touched && (vldtr.email && (!vldtr.email.valid))" class="d-flex">tot</small> -->
-            <small v-if="!fieldIsValid('email')" class="d-flex error">{{ showValMsg('email') }}</small>
-          </section>
-          <section class="form-group mb-2 pb-2">
-            <label for="" class="form-label d-flex">Subject</label>
-            <select @blur="fields.subjectLine.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('subjectLine') }" class="form-select py-275" name="subjectLine" id="" v-model="currentSubjectLine">
-              <option v-for="(subject, index) in subjectLines" :key="index" :value="subject.value">
-                {{ subject.text }}
-              </option>
-            </select>
-            <small v-if="!fieldIsValid('subjectLine')"  class="d-flex error">{{ showValMsg('subjectLine') }}</small>
-          </section>
-          <section class="form-group mb-2 pb-2">
-            <label for="message" class="form-label d-flex">Message</label>
-            <textarea @blur="fields.message.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('message') }" class="form-control" id="message" name="message" v-model="message"></textarea>
-            <small v-if="!fieldIsValid('message')"  class="d-flex error">{{ showValMsg('message') }}</small>
-          </section>
-          <button class="btn btn-secondary w-100 rounded-pill py-275 text-uppercase" type="submit" :disabled="!canSubmit">Send Message</button>
-        </form>
+      <section class="contact-message py-3 mt-1">
+      <h2>Send Me A Message</h2>
+      <p>
+        If you have any queries, just shoot me a message.
+      </p>
+      <section class="d-flex justify-content-center">
+        <!-- <ProgressSpinner /> -->
+        <section class="form-wrapper py-4 px-2 border border-3 shadow rounded-plus col-md-8 col-sm-10 col-11 col-lg-6 col-xl-5 col-xxl-4 mt-3" :class="isSubmitting ? 'opacity-375': ''">
+          <form class="form-horizontal px-md-4 mx-2"  name="contactForm" ref="contactForm" method="POST" 
+          data-netlify="true" 
+          data-netlify-honeypot="bot-field"
+          autocomplete="off"
+          @submit.prevent="sendMessage">
+            <fieldset :disabled="isSubmitting">
+              <input type="hidden" name="form-name" value="contactForm">
+              <section class="form-group mb-2 pb-2">
+                <label for="" class="form-label d-flex">Name</label>
+                <input @blur="fields.fullName.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('fullName') }" class="form-control py-275" type="text" placeholder="E.g. Jane Doe" name="contactName" v-model="fullName">
+                <small v-if="!fieldIsValid('fullName')" class="d-flex error">{{ showValMsg('fullName') }}</small>
+              </section>
+              <section class="form-group mb-2 pb-2">
+                <label for="contactEmail" class="form-label d-flex">Email</label>
+                <input @blur="fields.email.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('email') }" class="form-control py-275" type="email" placeholder="E.g. someone@example.com" name="contactEmail" autocomplete="off"  v-model="email">
+                <!-- <small v-if="fields.email.meta.touched && (vldtr.email && (!vldtr.email.valid))" class="d-flex">tot</small> -->
+                <small v-if="!fieldIsValid('email')" class="d-flex error">{{ showValMsg('email') }}</small>
+              </section>
+              <section class="form-group mb-2 pb-2">
+                <label for="" class="form-label d-flex">Subject</label>
+                <select @blur="fields.subjectLine.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('subjectLine') }" class="form-select py-275" name="subjectLine" id="" v-model="currentSubjectLine">
+                  <option v-for="(subject, index) in subjectLines" :key="index" :value="subject.value">
+                    {{ subject.text }}
+                  </option>
+                </select>
+                <small v-if="!fieldIsValid('subjectLine')"  class="d-flex error">{{ showValMsg('subjectLine') }}</small>
+              </section>
+              <section class="form-group mb-2 pb-2">
+                <label for="message" class="form-label d-flex">Message</label>
+                <textarea @blur="fields.message.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('message') }" class="form-control" id="message" name="message" v-model="message"></textarea>
+                <small v-if="!fieldIsValid('message')"  class="d-flex error">{{ showValMsg('message') }}</small>
+              </section>
+              <button class="btn btn-secondary w-100 rounded-pill py-275 text-uppercase" type="submit" :disabled="!canSubmit">Send Message</button>
+            </fieldset>
+          </form>
+        </section>
       </section>
-    </section>
-  </section>
+      </section>
 </section>
 </template>
 
 <script>
-import { computed, onMounted, reactive, toRefs, ref, watch } from 'vue';
+import { computed, onBeforeMount, reactive, toRefs, ref, watch } from 'vue';
 import { useField, useForm } from 'vee-validate';
+import { useToast } from "primevue/usetoast";
 import axios from 'axios';
 import * as yup from 'yup';
 
 export default {
     setup() {
+      const toast = useToast();
         const pageData = reactive({
             fullName: "",
             email: "",
@@ -84,6 +91,7 @@ export default {
             showPopup: false,
             statusMessage: "",
             success: false,
+            isSubmitting: false,
             navigateToUrl(url) {
               window.location.href = url;
             }
@@ -91,12 +99,12 @@ export default {
 
         const contactForm = ref(null);
 
-          const subjectLines =  [
-                { text: "-- Select a subject line --", value: "" },
-                { text: "Work Arrangement", value: "work" },
-                { text: "Freelance Project", value: "project" },
-                { text: "Other/General", value: "other" }
-            ];
+        const subjectLines =  [
+              { text: "-- Select a subject line --", value: "" },
+              { text: "Work Arrangement", value: "work" },
+              { text: "Freelance Project", value: "project" },
+              { text: "Other/General", value: "other" }
+        ];
 
         const contactChannels = [
           { name: "LinkedIn", url: "https://www.linkedin.com/in/gwong13/", logo: "", action: "VISIT"},
@@ -108,8 +116,9 @@ export default {
         let vldtr = ref({});
         // Setup Validation Schema
         const valSchema = yup.object({
-          fullName: yup.string().required().label("Name"),
           email: yup.string().required().email().label("Email"),
+          fullName: yup.string().required().label("Name"),
+          
           subjectLine: yup.string().required().label("Subject"),
           message: yup.string().required().label("Message")
         });
@@ -122,6 +131,7 @@ export default {
         // Handle submission
         const sendMessage =  async () => {
           pageData.formSubmitted = true;
+          pageData.isSubmitting = true;
           // formConfig.setValues({
           //   fullName: pageData.fullName,
           //   email: pageData.email,
@@ -132,6 +142,7 @@ export default {
           if (!canSubmit.value) {
             return;
           }
+          let statusMessage = "";
           const formData = new FormData(contactForm.value);
           // console.log(formData);
           var formFields = [];
@@ -140,22 +151,29 @@ export default {
             formFields.push(field);
           });
           let encodedData = formFields.join("&");
-          axios.post("/", encodedData, { header: { "Content-Type": "application/x-www-form-urlencoded" }}).then((res) => {
-            pageData.showPopup = true;
-            pageData.success = true;
-            pageData.statusMessage = "Your message was sent. Thank you!";
-            pageData.fullName = "";
-            pageData.email = "";
-            pageData.message = "";
-            pageData.currentSubjectLine = "";
-            // console.log(res);
-          })
-          .catch(err => {
-            pageData.showPopup = true;
-            pageData.success = false;
-            pageData.statusMessage = "Your message was not sent. Reach me via any other method listed on this page."
-            // console.log(err);
-          }) 
+          setTimeout(() => {
+            axios.post("/", encodedData, { header: { "Content-Type": "application/x-www-form-urlencoded" }}).then((res) => {
+              pageData.showPopup = true;
+              pageData.success = true;
+              pageData.isSubmitting = false;
+              
+              statusMessage = "Your message was sent. Thank you!";
+              toast.add({ severity: 'success', summary: 'Notification', detail: statusMessage, life: 3500});
+              pageData.fullName = "";
+              pageData.email = "";
+              pageData.message = "";
+              pageData.currentSubjectLine = "";
+              // console.log(res);
+            })
+            .catch(err => {
+              pageData.showPopup = true;
+              pageData.success = false;
+              pageData.isSubmitting = false;
+              statusMessage = "Your message was not sent. Reach me via any other method listed on this page.";
+              toast.add({ severity: 'error', summary: 'Notification', detail: statusMessage, life: 3500});
+              // console.log(err);
+            });
+          }, 2000);
         };
 
         // Grab fields to get individual meta-data
@@ -169,14 +187,27 @@ export default {
 
         const fieldIsValid = computed(() => {
           return (fieldName) => {
+            console.log(fields[fieldName].meta, vldtr.value[fieldName]["valid"]);
+            // for(var key in vldtr.value[fieldName]) {
+            //   console.log(vldtr.value[fieldName][key]);
+            // }
               // console.log(fields[fieldName].meta.touched, vldtr.value[fieldName]);
-              if (fields[fieldName].meta.touched) {
-                if (vldtr.value[fieldName]) {
-                  return vldtr.value[fieldName].valid
-                }
+
+              if (fields[fieldName].meta.touched && vldtr.value[fieldName].valid) {
+                return true;
+              }
+              else if (fields[fieldName].meta.touched && !vldtr.value[fieldName].valid) {
+                return false;
+              }
+              else {
+                return true;
               }
 
-              return !fields[fieldName].meta.touched;
+              // if (vldtr.value[fieldName]) {
+              //   return vldtr.value[fieldName].valid
+              // }
+              // return fields[fieldName].meta.touched;
+              // return (!fields[fieldName].meta.touched) && (vldtr.value[fieldName]) && (vldtr.value[fieldName].valid);
               // return !(fields[fieldName].meta.touched) && ((!vldtr.value[fieldName]) && (vldtr.value[fieldName].valid));
           };
         });
@@ -188,7 +219,8 @@ export default {
             if (err.value) {
               return err.value.replace('"', '');
             }
-            return "";
+            console.log(err.value);
+            
           }
         })
 
@@ -208,9 +240,9 @@ export default {
           canSubmit.value = formConfig.meta.value.valid;
         });
         
-        onMounted(async () => {
-          await formConfig.validate();
-          
+        onBeforeMount(async () => {
+          vldtr.value = (await formConfig.validate()).results;
+          // setTimeout(() => pageData.isSubmitting = true, 3500);
         });
         // If code was loaded
         // onMounted(async () => {
@@ -234,6 +266,19 @@ export default {
     padding-top: 0.75rem!important;
     padding-bottom: 0.75rem!important;
 }
+
+.form-wrapper {
+  transition: opacity .15s ease-in;
+}
+
+.form-control:disabled, .form-select:disabled {
+  background-color: transparent;
+}
+
+.opacity-375 {
+  opacity: .375 !important;
+}
+
 .rounded-plus {
   border-radius: .5rem !important;
 }
