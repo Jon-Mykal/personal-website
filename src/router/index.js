@@ -6,7 +6,10 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: {
+      title: 'Home'
+    }
   },
   {
     path: '/about',
@@ -14,27 +17,42 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    meta: {
+      title: 'About'
+    }
   },
   {
     path: '/contact',
     name: 'contact',
-    component: () => import('../views/ContactView.vue')
+    component: () => import('../views/ContactView.vue'),
+    meta: {
+      title: 'Contact'
+    }
   },
   {
     path: '/services',
     name: 'services',
-    component: () => import('../views/ServicesView.vue')
+    component: () => import('../views/ServicesView.vue'),
+    meta: {
+      title: 'Services'
+    }
   },
   {
     path: '/services/design',
     name: 'design',
-    component: () => import('../views/DesignView.vue')
+    component: () => import('../views/DesignView.vue'),
+    meta: {
+      title: 'Design'
+    }
   },
   {
     path: '/services/development',
     name: 'development',
-    component: () => import('../views/DevelopmentView.vue')
+    component: () => import('../views/DevelopmentView.vue'),
+    meta: {
+      title: 'Development'
+    }
   },
   {
     path: '/:pathMatch(.*)*',
@@ -55,6 +73,13 @@ const router = createRouter({
       return {left: 0, top: 0 }
     }
   }
-})
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta && to.meta.title) {
+    document.title = `${to.meta.title} | ${document.title}`;
+  }
+  next();
+});
 
 export default router
