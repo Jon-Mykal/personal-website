@@ -14,12 +14,12 @@
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <section class="offcanvas offcanvas-end w-75" id="navbarSupportedContent" ref="offcanvas">
-                    <header class="offcanvas-header">
+                <section class="offcanvas offcanvas-end mw-100 px-3 px-sm-4 px-md-5" id="navbarSupportedContent" ref="offcanvas">
+                    <header class="offcanvas-header px-sm-4 px-md-5">
                         <h5 class="offcanvas-title">Menu</h5>
                         <button ref="closeBtn" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </header>
-                    <section class="offcanvas-body justify-content-end">
+                    <section class="offcanvas-body justify-content-end px-sm-4 px-md-5">
                         <ul class="navbar-nav">
                             <li class="nav-tem">
                                 <router-link to="/" class="nav-link">Home</router-link> 
@@ -56,6 +56,7 @@ export default {
 
         router.afterEach(() => {
             const menuOpened = offcanvas.value.classList.contains("show");
+            console.log(offcanvas.value);
            if (menuOpened) {
                 closeBtn.value.click();
            }
@@ -73,5 +74,9 @@ export default {
 
 .navbar-toggler, .navbar-toggler:focus {
     box-shadow: none;
+}
+
+.offcanvas-end {
+    width: 100%;
 }
 </style>
