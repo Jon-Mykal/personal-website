@@ -4,7 +4,7 @@
             <p class="p-no-margin">
                 &copy; <span>{{ copyrightYear}}</span> Gregg Wong
             </p>
-            <p class="p-no-margin">Made with <a href="https://vuejs.org">Vue.js</a></p>
+            <p class="p-no-margin">Made with <a href="https://vuejs.org">Vue.js</a>. Powered by <a href="https://netlify.com">Netlify</a>.</p>
         </section>
     </footer>
 </template>

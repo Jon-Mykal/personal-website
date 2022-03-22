@@ -22,7 +22,7 @@
               </p>
             </section>
             <section class="d-flex px-3 justify-content-center justify-content-md-start justify-content-sm-center">
-              <router-link class="btn btn-primary rounded-pill px-4 gw--fs-7 text-uppercase" :to="{ name: 'about' }">View Résumé</router-link>
+              <a class="btn btn-primary rounded-pill px-4 gw--fs-7 text-uppercase" href="/docs/Gregg Wong Résumé.pdf">View Résumé</a>
             </section>
           </section>
         </section>
