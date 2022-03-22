@@ -9,14 +9,26 @@
         </template>
     </Dialog>
     <Hero pageTitle="Get In Touch"/>
-    <section class="contact-channels"></section>
+    <section class="contact-channels py-5">
+      <section class="container justify-content-center d-flex w-75">
+        <section class="row gx-5">
+          <section class="col-12 col-sm-4" v-for="channel in contactChannels" :key="channel.name" @click="navigateToUrl(channel.url)">
+            <section class="wrapper d-flex px-3 flex-column align-items-center pb-2 channel">
+              <section class="circle rounded-circle"></section>
+              <h5 class="pt-3">{{ channel.name }}</h5>
+              
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
     <section class="contact-message py-3 mt-1">
     <h2>Send Me A Message</h2>
     <p>
       If you have any queries, just shoot me a message.
     </p>
     <section class="d-flex justify-content-center">
-      <section class="form-wrapper py-4 px-2 border border-3 shadow rounded-plus col-md-9 col-sm-10 col-11 col-lg-4 mt-3">
+      <section class="form-wrapper py-4 px-2 border border-3 shadow rounded-plus col-md-8 col-sm-10 col-11 col-lg-6 col-xl-5 col-xxl-4 mt-3">
         <form class="form-horizontal px-md-4 mx-2"  name="contactForm" ref="contactForm" method="POST" 
         data-netlify="true" 
         data-netlify-honeypot="bot-field"
@@ -71,7 +83,10 @@ export default {
             formSubmitted: false,
             showPopup: false,
             statusMessage: "",
-            success: false
+            success: false,
+            navigateToUrl(url) {
+              window.location.href = url;
+            }
         });
 
         const contactForm = ref(null);
@@ -82,6 +97,12 @@ export default {
                 { text: "Freelance Project", value: "project" },
                 { text: "Other/General", value: "other" }
             ];
+
+        const contactChannels = [
+          { name: "LinkedIn", url: "https://www.linkedin.com/in/gwong13/", logo: "", action: "VISIT"},
+          { name: "GitHub", url: "https://github.com/Jon-Mykal", logo: "", action: "VISIT"},
+          { name: "Phone", url: "tel:+18768084984", logo: "", action: "CALL"},
+        ]    
 
         let canSubmit = ref(false);
         let vldtr = ref({});
@@ -203,7 +224,7 @@ export default {
         //   canSubmit.value = formConfig.meta.value.valid;
         // })
         
-        return { ...toRefs(pageData), sendMessage, canSubmit, subjectLines, formConfig, vldtr, fields, fieldIsValid, showValMsg, contactForm };
+        return { ...toRefs(pageData), sendMessage, canSubmit, subjectLines, formConfig, vldtr, fields, fieldIsValid, showValMsg, contactForm, contactChannels };
     }
 }
 </script>
@@ -235,7 +256,16 @@ export default {
 }
 
 .contact-channels {
-  background: #bebebe;
-  height: 20rem;
+  background: #bebebe;  
+}
+
+.channel {
+  cursor: pointer;
+}
+
+.circle {
+  height: 7rem;
+  width: 7rem;
+  background: white;
 }
 </style>
