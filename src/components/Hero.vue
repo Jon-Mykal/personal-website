@@ -1,5 +1,5 @@
 <template>
-        <section class="bg-secondary hero-main d-flex justify-content-center align-items-center">
+        <section class="gw--bg-main-blue hero-main d-flex justify-content-center align-items-center">
             <h1>{{pageTitle}}</h1>
         </section>
 </template>
