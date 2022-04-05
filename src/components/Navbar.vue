@@ -21,21 +21,21 @@
                         <h5 class="offcanvas-title">Menu</h5>
                         <button ref="closeBtn" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </header> -->
-                    <ul class="navbar-nav text-uppercase ">
+                    <ul class="navbar-nav text-uppercase gw--fs-6">
                         <li class="nav-item mx-3">
-                            <router-link to="/" class="nav-link text-white">Home</router-link> 
+                            <router-link to="/" class="nav-link text-white  gw--font-weight-500">Home</router-link> 
                         </li>
                         <li class="nav-item mx-3">
-                            <router-link :to="{name: 'development'}" class="nav-link text-white">Development</router-link>
+                            <router-link :to="{name: 'development'}" class="nav-link text-white  gw--font-weight-500">Development</router-link>
                         </li>
                         <li class="nav-item mx-3">
-                            <router-link :to="{name: 'design'}" class="nav-link text-white">Design</router-link>
+                            <router-link :to="{name: 'design'}" class="nav-link text-white  gw--font-weight-500">Design</router-link>
                         </li>
                         <li class="nav-item mx-3">
-                            <router-link to="/about" class="nav-link text-white">About</router-link> 
+                            <router-link to="/about" class="nav-link text-white  gw--font-weight-500">About</router-link> 
                         </li>
                         <li class="nav-item d-lg-none">
-                            <router-link :to="{ name: 'contact'}" class="btn rounded-pill nav-link px-5 text-white gw--bg-yellow-orange">Get in touch</router-link>
+                            <router-link :to="{ name: 'contact'}" class="btn rounded-pill nav-link px-5 text-white gw--bg-yellow-orange gw--font-weight-700">Get in touch</router-link>
                         </li>
                     </ul>
                     
@@ -48,7 +48,7 @@
                 </section>
                 <ul class="navbar-nav d-none d-lg-flex justify-content-end text-uppercase">
                     <li class="nav-tem ml-3">
-                        <router-link :to="{ name: 'contact'}" class="btn rounded-pill nav-link px-5 text-white gw--bg-yellow-orange">Get in touch</router-link>
+                        <router-link :to="{ name: 'contact'}" class="btn rounded-pill nav-link px-5 text-white gw--bg-yellow-orange gw--font-weight-700">Get in touch</router-link>
                     </li>
                 </ul>
             </section>
@@ -68,7 +68,7 @@ export default {
 
         router.afterEach(() => {
             const menuOpened = offcanvas.value.classList.contains("show");
-            console.log(offcanvas.value);
+            // console.log(offcanvas.value);
            if (menuOpened) {
                 closeBtn.value.click();
            }
@@ -84,6 +84,11 @@ export default {
     border-color: transparent;
     grid-column: 3 / span 1;
     margin-right: -0.5rem;
+}
+
+span.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+
 }
 
 #navbarSupportedContent {
