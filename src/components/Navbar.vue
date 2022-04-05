@@ -12,11 +12,12 @@
                     aria-controls="navbarSupportedContent"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
+                    
                     >
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <!-- </section> -->
-                <section class="collapse navbar-collapse mx-auto" id="navbarSupportedContent" ref="offcanvas">
+                <section class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
                     <!-- <header class="offcanvas-header px-sm-4 px-md-5">
                         <h5 class="offcanvas-title">Menu</h5>
                         <button ref="closeBtn" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -58,23 +59,12 @@
 
 <script>
 import { useRouter } from 'vue-router'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 export default {
     setup () {
-        const router = useRouter();
-        const offcanvas = ref(null);
-        const closeBtn = ref(null);
-
-        router.afterEach(() => {
-            const menuOpened = offcanvas.value.classList.contains("show");
-            // console.log(offcanvas.value);
-           if (menuOpened) {
-                closeBtn.value.click();
-           }
-        });
-
-        return {offcanvas, closeBtn};
+  
+        return {};
     }
 }
 </script>
