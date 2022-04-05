@@ -17,10 +17,10 @@ import Footer from "@/components/Footer.vue"
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Spectral:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Spectral:wght@700&display=swap');
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -89,6 +89,12 @@ import Footer from "@/components/Footer.vue"
   background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='120' height='120' patternTransform='scale(.05) rotate(25)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(210, 100%, 99%, 1)'/><path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5'  stroke-width='1' stroke='none' fill='hsla(216, 100%, 81%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
 }
 
+.gw--bg-poly-main-blue {
+  background-image: url('./assets/svgs/low-poly-grid-haikei.svg') !important;
+  color: #fff !important;
+  background-size: 80%;
+}
+
 .gw--heading-1-spectral {
   font-size: 5.75rem;
   font-family: var(--spectral-font);
@@ -135,6 +141,18 @@ nav a.router-link-exact-active {
   font-size: .875rem!important;
 }
 
+.gw--fs-6 {
+  font-size: .95rem!important;
+}
+
+.gw--font-weight-500 {
+  font-weight: 500 !important;
+}
+
+.gw--font-weight-700 {
+  font-weight: 700 !important;
+}
+
  li.p-carousel-indicator {
   margin-right: 0.875rem!important;
   
@@ -170,7 +188,7 @@ h3 {
 }
 
 .svg-inline--fa {
-  height: 3rem;
+  height: 2.5rem;
 }
 
 
