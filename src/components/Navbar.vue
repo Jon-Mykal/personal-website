@@ -1,9 +1,9 @@
 <template>
     <section>
-        <nav class="navbar navbar-expand-lg navbar-light gw--bg-main-blue">
+        <nav class="navbar navbar-expand-lg gw--bg-main-blue navbar-light">
             <section class="container d-grid gw-container">
                 <!-- <section class="branding-content"> -->
-                <router-link to="/" class="navbar-brand me-auto text-white">Gregg Wong</router-link>
+                <router-link to="/" class="navbar-brand me-auto text-white text-wrap">Gregg Wong</router-link>
                 <button
                     class="navbar-toggler text-end"
                     type="button"
@@ -35,7 +35,7 @@
                             <router-link to="/about" class="nav-link text-white">About</router-link> 
                         </li>
                         <li class="nav-item d-lg-none">
-                            <router-link :to="{ name: 'contact'}" class="btn btn-primary rounded-pill nav-link px-5 text-white gw--bg-yellow-orange">Get in touch</router-link>
+                            <router-link :to="{ name: 'contact'}" class="btn rounded-pill nav-link px-5 text-white gw--bg-yellow-orange">Get in touch</router-link>
                         </li>
                     </ul>
                     
@@ -48,7 +48,7 @@
                 </section>
                 <ul class="navbar-nav d-none d-lg-flex justify-content-end text-uppercase">
                     <li class="nav-tem ml-3">
-                        <router-link :to="{ name: 'contact'}" class="btn btn-primary rounded-pill nav-link px-5 text-white gw--bg-yellow-orange">Get in touch</router-link>
+                        <router-link :to="{ name: 'contact'}" class="btn rounded-pill nav-link px-5 text-white gw--bg-yellow-orange">Get in touch</router-link>
                     </li>
                 </ul>
             </section>
