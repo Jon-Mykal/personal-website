@@ -54,7 +54,7 @@
                 <font-awesome-icon icon="object-group" />
               </section>
               <p class="pt-4 gw--p-adjustment">
-                My clients trust me to get their business graphics done. Some of these include logos, business cards, letterheads, flyers and social media post templates. 
+                My clients trust me to get their business graphics done. Some of these include logos, business cards, letterheads, flyers and social media post templates. I would call these "everyday" graphics.
               </p>
             </section>
             <router-link class="btn gw--btn-main-blue rounded-pill px-4 gw--fs-7" :to="{ name: 'design' }">SEE MORE</router-link>
@@ -123,8 +123,8 @@ height: 30rem;
 
 
 .circle {
-  height: 9rem;
-  width: 9rem;
+  height: 8rem;
+  width: 8rem;
   background: white;
 }
 
