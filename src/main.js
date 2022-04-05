@@ -13,11 +13,16 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTerminal, faObjectGroup} from '@fortawesome/free-solid-svg-icons'
+import { faTerminal, faObjectGroup, faPhone} from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faTerminal);
 library.add(faObjectGroup);
+library.add(faLinkedin);
+library.add(faGithub);
+library.add(faPhone);
+
 
 import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
