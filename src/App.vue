@@ -92,12 +92,18 @@ import Footer from "@/components/Footer.vue"
 .gw--bg-poly-main-blue {
   background-image: url('./assets/svgs/low-poly-grid-haikei.svg') !important;
   color: #fff !important;
-  background-size: 80%;
+  background-size: cover;
 }
 
 .gw--heading-1-spectral {
   font-size: 5.75rem;
   font-family: var(--spectral-font);
+}
+
+.gw--heading-1-poppins {
+  font-weight: 700;
+  font-size: calc(2rem + 1vw);
+  font-family: var(--poppins-font);
 }
 
 .gw--heading-3-spectral {
@@ -106,7 +112,7 @@ import Footer from "@/components/Footer.vue"
 }
 
 
-.gw--marker-underline {
+.gw--marker-underline, .gw--marker-underline-2 {
   position: relative;
   z-index: 0;
 }
@@ -119,6 +125,19 @@ import Footer from "@/components/Footer.vue"
   width: 100%;
   height: calc(.375rem + 1vw);
   max-height: 1.5rem;
+  /* transform: skew(-12deg) translateX(-50%); */
+  background: var(--yellow-orange);
+  z-index: -1;
+}
+
+.gw--marker-underline-2::before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  margin-top:  calc(1.5rem + 1vw);
+  width: 100%;
+  height: calc(.5rem + 1vw);
+  max-height: 1.25rem;
   /* transform: skew(-12deg) translateX(-50%); */
   background: var(--yellow-orange);
   z-index: -1;
