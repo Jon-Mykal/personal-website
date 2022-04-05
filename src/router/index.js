@@ -77,7 +77,10 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.meta && to.meta.title) {
-    document.title = `${to.meta.title} | ${document.title}`;
+    document.title = `${to.meta.title} | Gregg Wong`;
+  }
+  else {
+    document.title = "Gregg Wong"
   }
   next();
 });
