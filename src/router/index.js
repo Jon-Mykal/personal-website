@@ -85,4 +85,15 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+router.afterEach(() => {
+    const closeBtn = document.querySelector("button.navbar-toggler");
+    const navbar = document.getElementById("navbarSupportedContent");
+    const menuOpened = navbar.classList.contains("show");
+    
+    if (menuOpened) {
+      // console.log("navCollapse.value");
+        closeBtn.click();
+    }
+});
+
 export default router
