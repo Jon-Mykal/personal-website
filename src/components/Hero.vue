@@ -1,6 +1,8 @@
 <template>
         <section class="gw--bg-poly-main-blue hero-main d-flex justify-content-center align-items-center">
-            <h1>{{pageTitle}}</h1>
+            <h1 class="gw--heading-1-poppins">
+                <span class="gw--marker-underline-2">{{pageTitle}}</span>
+            </h1>
         </section>
 </template>
 
