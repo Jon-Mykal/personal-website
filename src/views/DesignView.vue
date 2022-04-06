@@ -5,7 +5,7 @@
             <h3 class="py-3">Tools Used</h3>
             <section class="container">
                 <section class="row pb-2">
-                    <section class="col-12 col-md-6 col-lg-5">
+                    <section class="col-12 col-md-6 col-lg-5 py-5">
                         <Carousel :value="toolsUsed" :numVisible="1" :circular="true" containerClass="tools-used">
                             <template #item="slotProps">
                             <section class="pb-5">
@@ -22,23 +22,23 @@
                             </template>
                         </Carousel>
                     </section>
-                    <section class="col-md-6 col-12 offset-lg-1">
+                    <section class="col-md-6 col-12 offset-lg-1 py-5">
                         <section class="wrapper d-flex px-3 flex-column pb-3 text-md-start">
-                        <p class="pt-3">
-                            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. 
-                            Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. 
-                            A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                        <p class="pt-3 pb-0 align-self-center align-self-md-start gw--p-adjustment">
+                            Everybody has their go-to toolkit when it comes to getting work done and I am no different. 
+                            Based on the tools, you could say I am a fan of Adobe but hey, it's an industry standard after all. 
+                            Look below to see some of the things I've designed with these tools. If you like what you see, you can get in touch right away.
                         </p>
                         </section>
                     </section>
                 </section>
             </section>
         </section>
-        <section class="design-work py-3">
+        <section class="design-work py-3 gw--bg-off-white-blue-pattern">
         <h3 class="py-3">Work</h3>
         <section class="container">
             <section class="row pb-2 justify-content-center">
-            <section class="col-12 col-md-8 col-lg-6">
+            <section class="col-12 col-md-8 col-lg-6 pt-4 pb-2">
             <Carousel :value="workProjects" :numVisible="1" :circular="true">
                 <template #item="slotProps">
                 <section class="pb-5">
@@ -117,17 +117,17 @@ export default {
 </script>
 
 <style scoped>
-.design-tools {
+/* .design-tools {
     background: #bcbcbc;
-}
+} */
 
 .design-tool {
     cursor: pointer;
 }
-.design-work {
+/* .design-work {
 background: #d4d4d4;
 
-}
+} */
 
 .circle {
   height: 8rem;
