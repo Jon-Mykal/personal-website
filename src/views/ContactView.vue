@@ -10,27 +10,30 @@
         </template>
     </Dialog> -->
       <Hero pageTitle="Get In Touch"/>
-      <section class="contact-channels py-5">
+      <section class="contact-channels pt-5 pb-1">
         <section class="container justify-content-center d-flex w-75">
           <section class="row gx-5">
             <section class="col-12 col-sm-4" v-for="channel in contactChannels" :key="channel.name" @click="navigateToUrl(channel.url)">
               <section class="wrapper d-flex px-3 flex-column align-items-center pb-2 channel">
-                <section class="circle rounded-circle"></section>
+                <section class="circle rounded-circle gw--shadow-circle-2-yellow-orange gw--border-main-blue d-flex justify-content-center align-items-center">
+                  <font-awesome-icon :icon="channel.logo" />
+                </section>
                 <h5 class="pt-3">{{ channel.name }}</h5>
                 
               </section>
             </section>
+            
           </section>
         </section>
+        <p class="pt-4">
+          If you have any queries, just shoot me a message.
+        </p>
       </section>
-      <section class="contact-message py-3 mt-1">
-      <h2>Send Me A Message</h2>
-      <p>
-        If you have any queries, just shoot me a message.
-      </p>
+      <section class="contact-message py-3 mt-1 gw--bg-off-white-blue-pattern">
+      <h3>Send Me A Message</h3>
       <section class="d-flex justify-content-center">
         <!-- <ProgressSpinner /> -->
-        <section class="form-wrapper py-4 px-2 border border-3 shadow rounded-plus col-md-8 col-sm-10 col-11 col-lg-6 col-xl-5 col-xxl-4 mt-3" :class="isSubmitting ? 'opacity-375': ''">
+        <section class="form-wrapper bg-white py-4 px-2 border border-3 shadow rounded-plus col-md-8 col-sm-10 col-11 col-lg-6 col-xl-5 col-xxl-4 mt-3" :class="isSubmitting ? 'opacity-375': ''">
           <form class="form-horizontal px-md-4 mx-2"  name="contactForm" ref="contactForm" method="POST" 
           data-netlify="true" 
           data-netlify-honeypot="bot-field"
@@ -107,9 +110,9 @@ export default {
         ];
 
         const contactChannels = [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/gwong13/", logo: "", action: "VISIT"},
-          { name: "GitHub", url: "https://github.com/Jon-Mykal", logo: "", action: "VISIT"},
-          { name: "Phone", url: "tel:+18768084984", logo: "", action: "CALL"},
+          { name: "LinkedIn", url: "https://www.linkedin.com/in/gwong13/", logo: ["fab", "linkedin"], action: "VISIT"},
+          { name: "GitHub", url: "https://github.com/Jon-Mykal", logo: ["fab", "github"], action: "VISIT"},
+          { name: "Phone", url: "tel:+18768084984", logo: "phone", action: "CALL"},
         ]    
 
         let canSubmit = ref(false);
@@ -187,7 +190,7 @@ export default {
 
         const fieldIsValid = computed(() => {
           return (fieldName) => {
-            console.log(fields[fieldName].meta, vldtr.value[fieldName]["valid"]);
+            // console.log(fields[fieldName].meta, vldtr.value[fieldName]["valid"]);
             // for(var key in vldtr.value[fieldName]) {
             //   console.log(vldtr.value[fieldName][key]);
             // }
@@ -300,17 +303,17 @@ export default {
   cursor: no-drop!important;
 }
 
-.contact-channels {
-  background: #bebebe;  
-}
+/* .contact-channels {
+  
+} */
 
 .channel {
   cursor: pointer;
 }
 
 .circle {
-  height: 7rem;
-  width: 7rem;
+  height: 7.5rem;
+  width: 7.5rem;
   background: white;
 }
 </style>
