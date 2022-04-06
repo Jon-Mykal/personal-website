@@ -177,6 +177,10 @@ nav a.router-link-exact-active {
   
 }
 
+.p-carousel .p-carousel-indicators {
+    padding-bottom: 0!important;
+}
+
 li.p-carousel-indicator button.p-link {
   width: 1rem!important;
   height: 1rem!important;
@@ -185,7 +189,7 @@ li.p-carousel-indicator button.p-link {
 
 /** Carousels */
 .tools-used {
-    margin-bottom: -3.5rem;
+    margin-bottom: -2.5rem;
 }
 
 .gw--p-adjustment {
