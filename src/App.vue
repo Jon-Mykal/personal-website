@@ -143,19 +143,6 @@ import Footer from "@/components/Footer.vue"
   z-index: -1;
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-
 .gw--fs-7 {
   font-size: .875rem!important;
 }
@@ -172,8 +159,12 @@ nav a.router-link-exact-active {
   font-weight: 700 !important;
 }
 
+.gw--shadow {
+  box-shadow: 0 0.25rem 1rem rgba(0,17, 42, 50%) !important;
+}
+
  li.p-carousel-indicator {
-  margin-right: 0.875rem!important;
+  padding: 0 0.5rem!important;
   
 }
 
@@ -185,12 +176,33 @@ li.p-carousel-indicator button.p-link {
   width: 1rem!important;
   height: 1rem!important;
   border-radius: 10px!important;
+  background-color: var(--soft-blue) !important;
+}
+
+.p-carousel .p-carousel-content .p-carousel-container > .p-carousel-prev .pi, 
+.p-carousel .p-carousel-content .p-carousel-container > .p-carousel-next .pi{
+ font-size: 1.375rem !important;
+ 
+}
+
+li.p-carousel-indicator.p-highlight button {
+  background-color: var(--main-blue) !important;
+}
+
+a:focus, button:focus {
+  box-shadow: none !important;
 }
 
 /** Carousels */
 .tools-used {
-    margin-bottom: -2.5rem;
+    margin-bottom: 0.5rem;
 }
+
+.p-carousel .p-carousel-content .p-carousel-container > .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-container > .p-carousel-next {
+ margin-right: 2rem;
+ margin-left: 2rem;
+}
+
 
 .gw--p-adjustment {
   width: 90% !important;
@@ -208,6 +220,17 @@ h3 {
   .gw--p-adjustment {
     width: 75% !important;
   }
+
+  .img-fluid {
+    max-width: 60% !important;
+  }
+}
+
+ 
+@media (max-width: 768px)  {
+  .img-fluid {
+    max-width: 60% !important;
+  }
 }
 
 .svg-inline--fa {
@@ -215,5 +238,25 @@ h3 {
 }
 
 
+.nav-link:hover:not(.active-exclude) {
+    color: var(--yellow-orange) !important;
+    /* filter: brightness(110%); */
+}
+
+a.gw--bg-yellow-orange {
+    transition: all .15s ease-in-out;
+}
+
+a.gw--bg-yellow-orange:hover {
+    filter: brightness(110%) !important;
+}
+
+
+a.router-link-exact-active:not(.active-exclude) {
+    color: var(--yellow-orange) !important;
+}
+.active-exclude {
+    color: white !important;
+}
 
 </style>
