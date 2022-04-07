@@ -6,17 +6,14 @@
             <section class="container">
                 <section class="row pb-2">
                     <section class="col-12 col-md-6 col-lg-5 py-5">
-                        <Carousel :value="toolsUsed" :numVisible="1" :circular="true" containerClass="tools-used">
+                        <Carousel :value="toolsUsed" :numVisible="1" :circular="true" :autoplayInterval="3000" containerClass="tools-used">
                             <template #item="slotProps">
                             <section class="pb-5">
-                                <section class="wrapper d-flex px-3 flex-column align-items-center pb-3">
-                                <section class="circle rounded-circle"></section>
-                                <h5 class="pt-5">
-                                    <a :href="slotProps.data.url">{{ slotProps.data.name }}</a>
-                                </h5>
-                                <p class="mb-0 pb-2">
-                                    {{ slotProps.data.description}}
-                                </p>
+                                <section class="wrapper d-flex px-3 flex-column align-items-center pb-2">
+                                    <img :src="slotProps.data.logo" class="img-fluid"  alt="">
+                                    <h5 class="pt-2">
+                                        {{ slotProps.data.name }}
+                                    </h5>
                                 </section>
                             </section>
                             </template>
@@ -89,19 +86,19 @@ export default {
             const toolsData = [
                 { 
                     name: "Adobe Photoshop",
-                    logo: "",
+                    logo: require("../assets/svgs/Adobe_Photoshop_CC_icon.svg"),
                     description: "",
                     url: ""
                 },
                                 { 
                     name: "Adobe Illustrator",
-                    logo: "",
+                    logo: require("../assets/svgs/Adobe_Illustrator_CC_icon.svg"),
                     description: "",
                     url: ""
                 },
                 { 
                     name: "Adobe XD",
-                    logo: "",
+                    logo: require("../assets/svgs/Adobe_XD_CC_icon.svg"),
                     description: "",
                     url: ""
                 }
