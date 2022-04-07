@@ -12,9 +12,9 @@
       <Hero pageTitle="Get In Touch"/>
       <section class="contact-channels pt-5 pb-1">
         <section class="container justify-content-center d-flex w-75">
-          <section class="row gx-5">
+          <section class="row gx-5 pt-5 pt-sm-0">
             <section class="col-12 col-sm-4" v-for="channel in contactChannels" :key="channel.name" @click="navigateToUrl(channel.url)">
-              <section class="wrapper d-flex px-3 flex-column align-items-center pb-2 channel">
+              <section class="wrapper d-flex px-3 flex-column align-items-center my-md-5 pb-5 pt-2 pt-sm-5 pb-md-2 pt-md-0 channel">
                 <section class="circle rounded-circle gw--shadow-circle-2-yellow-orange gw--border-main-blue d-flex justify-content-center align-items-center">
                   <font-awesome-icon :icon="channel.logo" />
                 </section>
