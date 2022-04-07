@@ -2,7 +2,7 @@
     <section class="development">
         <Hero pageTitle="Development"/>
         <section class="tech-stacks py-3">
-            <h3 class="py-3">Technologies Used</h3>
+            <h3 class="py-3  gw--text-main-blue">Technologies Used</h3>
             <section class="container">
                 <section class="row pb-2">
                     <section class="col-12 col-md-6 col-lg-5 py-5">
@@ -32,7 +32,7 @@
             </section>
         </section>
         <section class="dev-work py-3 gw--bg-off-white-blue-pattern">
-        <h3 class="py-3">Work</h3>
+        <h3 class="py-3  gw--text-main-blue">Work</h3>
         <section class="container">
             <section class="row pb-2 justify-content-center">
             <section class="col-12 col-md-8 col-lg-6 pt-4 pb-2">
