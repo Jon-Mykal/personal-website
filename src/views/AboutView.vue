@@ -26,7 +26,7 @@
               </p>
             </section>
             <section class="d-flex px-3 justify-content-center justify-content-md-start justify-content-sm-center">
-              <a class="btn gw--bg-main-blue rounded-pill px-4 gw--fs-7 text-uppercase" href="/docs/Gregg Wong Résumé.pdf">View Résumé</a>
+              <a class="btn gw--btn-main-blue rounded-pill px-4 gw--fs-7 text-uppercase" href="/docs/Gregg Wong Résumé.pdf">View Résumé</a>
             </section>
           </section>
         </section>
@@ -42,12 +42,14 @@
               <section class="pb-5">
                 <section class="wrapper d-flex px-3 flex-column align-items-center pb-2">
                   <img :src="slotProps.data.logo" class="img-fluid"  alt="">
-                  <h5 class="pt-5">{{ slotProps.data.name }}</h5>
+                  <h5 class="pt-5">
+                    <a class="gw--text-main-blue text-decoration-none" :href="slotProps.data.url">{{ slotProps.data.name }}</a>
+                  </h5>
                   <!-- <p class="mb-0 pb-2">
                     {{ slotProps.data.description}}
                   </p> -->
                 </section>
-                <a class="btn gw--bg-main-blue rounded-pill px-4 gw--fs-7" :href="slotProps.data.url">VISIT</a>
+                
               </section>
             </template>
           </Carousel>
