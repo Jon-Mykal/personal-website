@@ -26,7 +26,7 @@
               </p>
             </section>
             <section class="d-flex px-3 justify-content-center justify-content-md-start justify-content-sm-center">
-              <a class="btn btn-primary rounded-pill px-4 gw--fs-7 text-uppercase" href="/docs/Gregg Wong Résumé.pdf">View Résumé</a>
+              <a class="btn gw--bg-main-blue rounded-pill px-4 gw--fs-7 text-uppercase" href="/docs/Gregg Wong Résumé.pdf">View Résumé</a>
             </section>
           </section>
         </section>
@@ -37,17 +37,17 @@
       <section class="container">
         <section class="row pb-2 justify-content-center">
           <section class="col-12 col-md-8 col-lg-6 pt-4 pb-2">
-          <Carousel :value="currentlyLearning" :numVisible="1" :circular="true">
+          <Carousel :value="currentlyLearning" :numVisible="1" :circular="true" :autoplayInterval="3000">
             <template #item="slotProps">
               <section class="pb-5">
-                <section class="wrapper d-flex px-3 flex-column align-items-center pb-3">
-                  <section class="circle rounded-circle"></section>
+                <section class="wrapper d-flex px-3 flex-column align-items-center pb-2">
+                  <img :src="slotProps.data.logo" class="img-fluid"  alt="">
                   <h5 class="pt-5">{{ slotProps.data.name }}</h5>
-                  <p class="mb-0 pb-2">
+                  <!-- <p class="mb-0 pb-2">
                     {{ slotProps.data.description}}
-                  </p>
+                  </p> -->
                 </section>
-                <a class="btn btn-primary rounded-pill px-4 gw--fs-7" :href="slotProps.data.resourceLink">LINK</a>
+                <a class="btn gw--bg-main-blue rounded-pill px-4 gw--fs-7" :href="slotProps.data.url">VISIT</a>
               </section>
             </template>
           </Carousel>
@@ -68,21 +68,15 @@ export default {
       const data = [
       {
         name: "Xamarin",
-        image: "/",
+        logo: require("../assets/svgs/xamarin-seeklogo.com.svg"),
         description: "Far far away, behind the word mountains,",
-        resourceLink: "https://dotnet.microsoft.com/en-us/apps/xamarin"
+        url: "https://dotnet.microsoft.com/en-us/apps/xamarin"
       },
       {
         name: "React",
-        image: "/",
+        logo: require("../assets/svgs/React-icon.svg"),
         description: "Far far away, behind the word mountains,",
-        resourceLink: "https://reactjs.org/"
-      },
-      {
-        name: "Azure",
-        image: "/",
-        description: "Far far away, behind the word mountains,",
-        resourceLink: "https://azure.microsoft.com/en-us/"
+        url: "https://reactjs.org/"
       }
     ];
     currentlyLearning.value = data;
