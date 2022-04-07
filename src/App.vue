@@ -182,7 +182,7 @@ li.p-carousel-indicator button.p-link {
 .p-carousel .p-carousel-content .p-carousel-container > .p-carousel-prev .pi, 
 .p-carousel .p-carousel-content .p-carousel-container > .p-carousel-next .pi{
  font-size: 1.375rem !important;
- 
+ color: var(--yellow-orange);
 }
 
 li.p-carousel-indicator.p-highlight button {
@@ -243,11 +243,15 @@ h3 {
     /* filter: brightness(110%); */
 }
 
-a.gw--bg-yellow-orange {
+a.gw--bg-yellow-orange,
+a.gw--btn-main-blue,
+button.gw--bg-main-blue {
     transition: all .15s ease-in-out;
 }
 
-a.gw--bg-yellow-orange:hover {
+a.gw--bg-yellow-orange:hover,
+a.gw--btn-main-blue:hover,
+button.gw--bg-main-blue:hover {
     filter: brightness(110%) !important;
 }
 
