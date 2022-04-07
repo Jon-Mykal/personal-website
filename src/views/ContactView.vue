@@ -30,10 +30,10 @@
         </p>
       </section>
       <section class="contact-message py-3 mt-1 gw--bg-off-white-blue-pattern">
-      <h3>Send Me A Message</h3>
+      <h3 class="py-3">Send Me A Message</h3>
       <section class="d-flex justify-content-center">
         <!-- <ProgressSpinner /> -->
-        <section class="form-wrapper bg-white py-4 px-2 border border-3 shadow rounded-plus col-md-8 col-sm-10 col-11 col-lg-6 col-xl-5 col-xxl-4 mt-3" :class="isSubmitting ? 'opacity-375': ''">
+        <section class="form-wrapper bg-white py-4 px-2 gw--shadow rounded-plus col-md-8 col-sm-10 col-11 col-lg-6 col-xl-5 col-xxl-4 mt-3" :class="isSubmitting ? 'opacity-375': ''">
           <form class="form-horizontal px-md-4 mx-2"  name="contactForm" ref="contactForm" method="POST" 
           data-netlify="true" 
           data-netlify-honeypot="bot-field"
@@ -66,7 +66,7 @@
                 <textarea @blur="fields.message.meta.touched = true" :class="{ 'p-invalid': !fieldIsValid('message') }" class="form-control" id="message" name="message" v-model="message"></textarea>
                 <small v-if="!fieldIsValid('message')"  class="d-flex error">{{ showValMsg('message') }}</small>
               </section>
-              <button class="btn btn-secondary w-100 rounded-pill py-275 text-uppercase" type="submit" :disabled="!canSubmit">Send Message</button>
+              <button class="btn gw--bg-main-blue w-100 rounded-pill py-275 text-uppercase" type="submit" :disabled="!canSubmit">Send Message</button>
             </fieldset>
           </form>
         </section>
@@ -222,7 +222,7 @@ export default {
             if (err.value) {
               return err.value.replace('"', '');
             }
-            console.log(err.value);
+            // console.log(err.value);
             
           }
         })
@@ -276,6 +276,16 @@ export default {
 
 .form-control:disabled, .form-select:disabled {
   background-color: transparent;
+}
+
+
+.form-control, .form-select {
+  border-color: var(--dark-blue-black);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--main-blue);
+  box-shadow: none;
 }
 
 .opacity-375 {
