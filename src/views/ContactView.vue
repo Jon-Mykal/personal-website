@@ -30,7 +30,7 @@
         </p>
       </section>
       <section class="contact-message py-3 mt-1 gw--bg-off-white-blue-pattern">
-      <h3 class="py-3">Send Me A Message</h3>
+      <h3 class="py-3  gw--text-main-blue">Send Me A Message</h3>
       <section class="d-flex justify-content-center">
         <!-- <ProgressSpinner /> -->
         <section class="form-wrapper bg-white py-4 px-2 gw--shadow rounded-plus col-md-8 col-sm-10 col-11 col-lg-6 col-xl-5 col-xxl-4 mt-3" :class="isSubmitting ? 'opacity-375': ''">
