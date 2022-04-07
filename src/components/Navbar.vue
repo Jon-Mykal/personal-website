@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg gw--bg-main-blue navbar-light">
             <section class="container d-grid gw-container">
                 <!-- <section class="branding-content"> -->
-                <router-link to="/" class="navbar-brand me-auto text-white text-wrap">Gregg Wong</router-link>
+                <router-link to="/" class="navbar-brand me-auto text-white text-wrap gw--font-weight-700 active-exclude">Gregg Wong</router-link>
                 <button
                     class="navbar-toggler text-end"
                     type="button"
@@ -36,7 +36,7 @@
                             <router-link to="/about" class="nav-link text-white  gw--font-weight-500">About</router-link> 
                         </li>
                         <li class="nav-item d-lg-none">
-                            <router-link :to="{ name: 'contact'}" class="btn rounded-pill nav-link px-5 text-white gw--bg-yellow-orange gw--font-weight-700">Get in touch</router-link>
+                            <router-link :to="{ name: 'contact'}" class="btn rounded-pill nav-link px-5 text-white gw--bg-yellow-orange gw--font-weight-700 active-exclude">Get in touch</router-link>
                         </li>
                     </ul>
                     
@@ -48,8 +48,8 @@
                     </section> -->
                 </section>
                 <ul class="navbar-nav d-none d-lg-flex justify-content-end text-uppercase">
-                    <li class="nav-tem ml-3">
-                        <router-link :to="{ name: 'contact'}" class="btn rounded-pill nav-link px-5 text-white gw--bg-yellow-orange gw--font-weight-700">Get in touch</router-link>
+                    <li class="nav-item ml-3">
+                        <router-link :to="{ name: 'contact'}" class="btn rounded-pill nav-link px-5 text-white gw--bg-yellow-orange gw--font-weight-700 active-exclude">Get in touch</router-link>
                     </li>
                 </ul>
             </section>
@@ -96,4 +96,5 @@ span.navbar-toggler-icon {
 .gw-container {
     grid-template-columns: 1fr auto 1fr;
 }
+
 </style>
