@@ -7,7 +7,7 @@
        </section>
     </section>
     <section class="bio-overview bg-white py-3">
-      <h3 class="py-3">A Little About Me</h3>
+      <h3 class="py-3 gw--text-main-blue">A Little About Me</h3>
       <section class="container">
         <section class="row pb-2">
           <section class="col-md-6 col-sm-12 py-5">
@@ -30,7 +30,7 @@
       </section>
     </section>
     <section class="skillsets gw--bg-off-white-blue-pattern py-3">
-      <h3 class="py-3">What Can I Do?</h3>
+      <h3 class="py-3 gw--text-main-blue">What Can I Do?</h3>
       <section class="container">
         <section class="row pb-2">
           <section class="col-sm-12 col-md-6 py-4">
