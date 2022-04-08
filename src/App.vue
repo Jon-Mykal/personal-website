@@ -1,6 +1,10 @@
 <template>
   <Navbar />
-  <router-view/>
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
   <Footer />
 </template>
 
@@ -255,12 +259,63 @@ button.gw--bg-main-blue:hover {
     filter: brightness(110%) !important;
 }
 
-
 a.router-link-exact-active:not(.active-exclude) {
     color: var(--yellow-orange) !important;
 }
 .active-exclude {
     color: white !important;
+}
+
+
+/** Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease-in-out;
+}
+
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.2s ease;
+}
+
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+
+.scale-slide-enter-active,
+.scale-slide-leave-active {
+  position: absolute;
+  transition: all 0.85s ease;
+}
+
+
+.scale-slide-enter-from {
+  left: -100%;
+}
+
+
+.scale-slide-enter-to {
+  left: 0%;
+}
+
+
+.scale-slide-leave-from {
+  transform: scale(1);
+}
+
+
+.scale-slide-leave-to {
+  transform: scale(0.8);
 }
 
 </style>
