@@ -12,6 +12,18 @@ import 'primeicons/primeicons.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faTerminal, faObjectGroup, faPhone} from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faTerminal);
+library.add(faObjectGroup);
+library.add(faLinkedin);
+library.add(faGithub);
+library.add(faPhone);
+
+
 import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
 
@@ -30,4 +42,5 @@ app.component('BlockUI', BlockUI);
 app.component('ProgressSpinner', ProgressSpinner);
 app.component('Toast', Toast);
 app.component('Carousel', Carousel);
+app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(router).use(PrimeVue).use(ToastService).mount('#app');
