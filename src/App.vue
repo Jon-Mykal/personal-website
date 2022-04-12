@@ -99,7 +99,8 @@ import Footer from "@/components/Footer.vue"
 }
 
 .gw--bg-off-white-blue-pattern {
-  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='120' height='120' patternTransform='scale(.05) rotate(25)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(210, 100%, 99%, 1)'/><path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5'  stroke-width='1' stroke='none' fill='hsla(216, 100%, 81%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
+  /* background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='120' height='120' patternTransform='scale(.05) rotate(25)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(210, 100%, 99%, 1)'/><path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5'  stroke-width='1' stroke='none' fill='hsla(216, 100%, 21%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>") */
+  background-image: url('./assets/svgs/bg-pattern.svg') !important;
 }
 
 .gw--bg-poly-main-blue {
