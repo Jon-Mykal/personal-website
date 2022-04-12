@@ -1,0 +1,13 @@
+<svg id="10015.io" viewBox="0 0 1920 800" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <pattern id="pattern" x="0" y="0" width="13" height="13" patternUnits="userSpaceOnUse" patternTransform="translate(9, 9) rotate(31) skewX(0)">
+            <svg width="10" height="10" viewBox="0 0 220 220">
+                <g fill="#9ec5ff" opacity=".375">
+                    <circle cx="30" cy="30" r="30"></circle>
+                </g>
+            </svg>
+        </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="#f9fcff"></rect>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)"></rect>
+</svg>
