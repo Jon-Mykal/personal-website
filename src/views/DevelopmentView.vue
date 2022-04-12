@@ -32,7 +32,7 @@
             </section>
         </section>
         <section class="dev-work py-3 gw--bg-off-white-blue-pattern">
-        <h3 class="py-3  gw--text-main-blue">Work</h3>
+        <h3 class="py-3 gw--text-main-blue">Work</h3>
         <section class="container">
             <section class="row pb-2 justify-content-center">
             <section class="col-12 col-md-8 col-lg-6 pt-4 pb-2">
@@ -40,13 +40,13 @@
                 <template #item="slotProps">
                 <section class="pb-5">
                     <section class="wrapper d-flex px-3 flex-column align-items-center pb-3">
-                    <section class="circle rounded-circle"></section>
+                    <Image src="https://via.placeholder.com/540" alt="Image" width="150" preview />
                     <h5 class="pt-5">{{ slotProps.data.name }}</h5>
-                    <p class="mb-0 pb-2">
+                    <!-- <p class="mb-0 pb-2">
                         {{ slotProps.data.description }}
-                    </p>
+                    </p> -->
                     </section>
-                    <a class="btn btn-primary rounded-pill px-4 gw--fs-7" :href="slotProps.data.url">LINK</a>
+                    <!-- <a class="btn btn-primary rounded-pill px-4 gw--fs-7" :href="slotProps.data.url">LINK</a> -->
                 </section>
                 </template>
             </Carousel>
