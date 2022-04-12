@@ -32,6 +32,7 @@ import Toast from 'primevue/toast';
 import BlockUI from 'primevue/blockui';
 import ProgressSpinner from 'primevue/progressspinner';
 import Carousel from 'primevue/carousel';
+import Image from 'primevue/image'
 
 const app = createApp(App);
 // Global Component Registrations
@@ -43,4 +44,5 @@ app.component('ProgressSpinner', ProgressSpinner);
 app.component('Toast', Toast);
 app.component('Carousel', Carousel);
 app.component('font-awesome-icon', FontAwesomeIcon)
+app.component('Image', Image);
 app.use(router).use(PrimeVue).use(ToastService).mount('#app');
