@@ -128,13 +128,6 @@ height: 30rem;
   background: white;
 }
 
-.img-frame {
-  height: 27rem;
-  width: 27rem;
-  background: white;
-  border: 1px solid #dedede;
-}
-
 .hero-landing {
   padding-top: 6.5rem;
   padding-bottom: 6.5rem;
