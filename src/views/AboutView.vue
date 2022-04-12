@@ -2,7 +2,7 @@
   <section class="about">
     <Hero pageTitle="About Me"/>
     <section class="bio py-3">
-      <h3 class="py-3">Bio</h3>
+      <h3 class="py-3 gw--text-main-blue">Bio</h3>
       <section class="container">
         <section class="row pb-2">
           <section class="col-md-6 col-sm-12 py-5">
@@ -12,7 +12,7 @@
           </section>
           <section class="col-md-6 col-sm-12 py-5">
             <section class="wrapper d-flex px-3 flex-column pb-2 text-md-start">
-              <p class="fs-5 pb-0 align-self-center align-self-md-start gw--p-adjustment">I'm Gregg Wong, a web/software developer &amp; designer based in the beautiful island of Jamaica currently stationed in St. Catherine.</p>
+              <p class="fs-5 pb-0 align-self-center align-self-md-start gw--p-adjustment">I'm <strong>Gregg Wong</strong>, a web/software developer &amp; designer based in the beautiful island of Jamaica currently stationed in St. Catherine.</p>
               <p class="pb-0 align-self-center align-self-md-start gw--p-adjustment">
                   I've spent the last <strong>7+ years</strong> working on development projects from building out UIs to upgrading existing apps by adding features to make users happy. 
                   I've touched on a few application types such as desktop and web (Single Page Apps, traditional, APIs) and more recently added designer to my list of skills and talents.
@@ -33,7 +33,7 @@
       </section>
     </section>
     <section class="learning py-3 gw--bg-off-white-blue-pattern">
-      <h3 class="py-3">Currently Learning</h3>
+      <h3 class="py-3 gw--text-main-blue">Currently Learning</h3>
       <section class="container">
         <section class="row pb-2 justify-content-center">
           <section class="col-12 col-md-8 col-lg-6 pt-4 pb-2">
@@ -100,12 +100,7 @@ export default {
 
 } */
 
-.img-frame {
-  height: 27rem;
-  width: 27rem;
-  background: white;
-  border: 1px solid #dedede;
-}
+
 .circle {
   height: 10rem;
   width: 10rem;

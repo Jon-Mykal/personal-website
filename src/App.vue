@@ -39,6 +39,15 @@ import Footer from "@/components/Footer.vue"
   --poppins-font: 'Poppins', sans-serif;
 }
 
+.img-frame {
+  height: 25rem;
+  width: 25rem;
+  background-image: url("https://via.placeholder.com/540");
+  background-size: cover;
+  border: 1px solid #dedede;
+
+}
+
 .gw--btn-main-blue {
   background-color: var(--main-blue) !important;
   color: #fff !important;
