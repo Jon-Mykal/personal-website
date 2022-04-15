@@ -39,13 +39,13 @@
             <Carousel :value="workProjects" :numVisible="1" :circular="true">
                 <template #item="slotProps">
                 <section class="pb-5">
-                    <section class="wrapper d-flex px-3 flex-column align-items-center pb-3">
-                    <Image src="https://via.placeholder.com/540x540" alt="Image" width="150" preview />
+                    <section class="wrapper d-flex flex-column align-items-center pb-3">
+                    <Image :src="slotProps.data.image" alt="Image" width="155" class="img-fluid" preview />
                     <!-- <section class="circle rounded-circle"></section> -->
                     <h5 class="pt-5">{{ slotProps.data.name }}</h5>
-                    <!-- <p class="mb-0 pb-2">
+                    <p class="mb-0 pb-2">
                         {{ slotProps.data.description}}
-                    </p> -->
+                    </p>
                     </section>
                     <!-- <a class="btn btn-primary rounded-pill px-4 gw--fs-7" :href="slotProps.data.url">LINK</a> -->
                 </section>
@@ -66,23 +66,35 @@ export default {
         onMounted(() => {
             const workData = [
                 {
-                    name: "Xamarin",
-                    image: "/",
-                    description: "Far far away, behind the word mountains,",
+                    name: "The Farmer's Gallery",
+                    image: require('../assets/design/The Farmer\'s Gallery Main Logo.png'),
+                    description: "Logo for The Farmer's Gallery",
                     url: "https://dotnet.microsoft.com/en-us/apps/xamarin"
                 },
                 {
-                    name: "React",
-                    image: "/",
-                    description: "Far far away, behind the word mountains,",
+                    name: "The Suitest Voice",
+                    image: require('../assets/design/The Suitest Voice_01 copy.png'),
+                    description: "Logo for The Suitest Voice",
                     url: "https://reactjs.org/"
                 },
                 {
-                    name: "Azure",
-                    image: "/",
-                    description: "Far far away, behind the word mountains,",
+                    name: "Berly\'s Bags",
+                    image: require('../assets/design/Berlys Bags Brand Identity_Logo Main.png'),
+                    description: "Logo for Berly\'s Bags",
                     url: "https://azure.microsoft.com/en-us/"
-                }
+                },
+                {
+                    name: "LFW & Associates Consulting",
+                    image: require('../assets/design/LFW Consulting Post.png'),
+                    description: "Instagram Post Design",
+                    url: "https://azure.microsoft.com/en-us/"
+                },
+                {
+                    name: "Birthday Invitation",
+                    image: require('../assets/design/Latona\'s Birthday Invitation.jpg'),
+                    description: "Flyer Design for a Birthday Party",
+                    url: "https://azure.microsoft.com/en-us/"
+                },
             ];
             const toolsData = [
                 { 
