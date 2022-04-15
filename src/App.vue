@@ -213,8 +213,8 @@ a:focus, button:focus {
 }
 
 .p-carousel .p-carousel-content .p-carousel-container > .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-container > .p-carousel-next {
- margin-right: 2rem;
- margin-left: 2rem;
+ margin-right: 1.125rem;
+ margin-left: 1.125rem;
 }
 
 
