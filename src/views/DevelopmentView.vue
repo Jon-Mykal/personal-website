@@ -40,13 +40,13 @@
                 <template #item="slotProps">
                 <section class="pb-5">
                     <section class="wrapper d-flex px-3 flex-column align-items-center pb-3">
-                    <Image src="https://via.placeholder.com/540" alt="Image" width="150" preview />
+                    <Image :src="slotProps.data.image" alt="Image" width="150" preview />
                     <h5 class="pt-5">{{ slotProps.data.name }}</h5>
-                    <!-- <p class="mb-0 pb-2">
+                    <p class="mb-0 pb-2">
                         {{ slotProps.data.description }}
-                    </p> -->
+                    </p>
                     </section>
-                    <!-- <a class="btn btn-primary rounded-pill px-4 gw--fs-7" :href="slotProps.data.url">LINK</a> -->
+                    <a class="btn btn-primary rounded-pill px-4 gw--fs-7" :href="slotProps.data.url">VISIT</a>
                 </section>
                 </template>
             </Carousel>
@@ -65,22 +65,10 @@ export default {
         onMounted(() => {
             const workData = [
             {
-                name: "Xamarin",
-                image: "/",
-                description: "Far far away, behind the word mountains,",
-                url: "https://dotnet.microsoft.com/en-us/apps/xamarin"
-            },
-            {
-                name: "React",
-                image: "/",
-                description: "Far far away, behind the word mountains,",
-                url: "https://reactjs.org/"
-            },
-            {
-                name: "Azure",
-                image: "/",
-                description: "Far far away, behind the word mountains,",
-                url: "https://azure.microsoft.com/en-us/"
+                name: "JNGI Online",
+                image: require("../assets/development/JNGI Online Presentation.png"),
+                description: "E-Commerce website for JNGI Online",
+                url: "https://www.jngionline.com/new/home"
             }
             ];
             const toolsData = [
