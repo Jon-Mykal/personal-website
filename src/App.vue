@@ -178,7 +178,7 @@ import Footer from "@/components/Footer.vue"
 }
 
  li.p-carousel-indicator {
-  padding: 0 0.5rem!important;
+  padding: 0 0.375rem!important;
   
 }
 
@@ -187,10 +187,11 @@ import Footer from "@/components/Footer.vue"
 }
 
 li.p-carousel-indicator button.p-link {
-  width: 1rem!important;
-  height: 1rem!important;
+  width: 0.75rem!important;
+  height: 0.75rem!important;
   border-radius: 10px!important;
   background-color: var(--soft-blue) !important;
+  transition: all 1.5s ease;
 }
 
 .p-carousel .p-carousel-content .p-carousel-container > .p-carousel-prev .pi, 
@@ -201,6 +202,7 @@ li.p-carousel-indicator button.p-link {
 
 li.p-carousel-indicator.p-highlight button {
   background-color: var(--main-blue) !important;
+  transform: scale(1.375);
 }
 
 a:focus, button:focus {
