@@ -162,7 +162,7 @@ import Footer from "@/components/Footer.vue"
 }
 
 .gw--fs-6 {
-  font-size: .95rem!important;
+  font-size: .875rem!important;
 }
 
 .gw--font-weight-500 {
