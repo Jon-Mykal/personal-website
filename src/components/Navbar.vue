@@ -23,16 +23,16 @@
                         <button ref="closeBtn" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </header> -->
                     <ul class="navbar-nav text-uppercase gw--fs-6">
-                        <li class="nav-item mx-3">
+                        <li class="nav-item mx-1">
                             <router-link to="/" class="nav-link text-white  gw--font-weight-500">Home</router-link> 
                         </li>
-                        <li class="nav-item mx-3">
+                        <li class="nav-item mx-1">
                             <router-link :to="{name: 'development'}" class="nav-link text-white  gw--font-weight-500">Development</router-link>
                         </li>
-                        <li class="nav-item mx-3">
+                        <li class="nav-item mx-1">
                             <router-link :to="{name: 'design'}" class="nav-link text-white  gw--font-weight-500">Design</router-link>
                         </li>
-                        <li class="nav-item mx-3">
+                        <li class="nav-item mx-1">
                             <router-link to="/about" class="nav-link text-white  gw--font-weight-500">About</router-link> 
                         </li>
                         <li class="nav-item d-lg-none">
