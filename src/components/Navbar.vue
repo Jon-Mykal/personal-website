@@ -1,9 +1,12 @@
 <template>
     <section>
-        <nav class="navbar navbar-expand-lg gw--bg-main-blue navbar-light">
+        <nav class="navbar navbar-expand-lg gw--bg-main-blue navbar-light py-1">
             <section class="container d-grid gw-container">
                 <!-- <section class="branding-content"> -->
-                <router-link to="/" class="navbar-brand me-auto text-white text-wrap gw--font-weight-700 active-exclude">Gregg Wong</router-link>
+                <router-link to="/" class="navbar-brand me-auto text-white text-wrap gw--font-weight-700 active-exclude d-flex align-items-center">
+                    <img src="../assets/svgs/Gregg_Wong_Logo_02.svg" class="ms-md-5 logo-img" />
+                    <!-- <span>Gregg Wong</span> -->
+                </router-link>
                 <button
                     class="navbar-toggler text-end"
                     type="button"
@@ -82,7 +85,7 @@ span.navbar-toggler-icon {
 }
 
 #navbarSupportedContent {
-    grid-column: 2;
+    grid-column: 2 / span 1;
 }
 
 .navbar-toggler, .navbar-toggler:focus {
@@ -95,6 +98,11 @@ span.navbar-toggler-icon {
 
 .gw-container {
     grid-template-columns: 1fr auto 1fr;
+}
+
+.logo-img {
+    max-width: 3rem;
+    height: auto;
 }
 
 </style>
