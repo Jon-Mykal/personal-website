@@ -14,7 +14,7 @@
             <section class="wrapper d-flex px-3 flex-column pb-2 text-md-start">
               <p class="fs-5 pb-0 align-self-center align-self-md-start gw--p-adjustment">I'm <strong>Gregg Wong</strong>, a web/software developer &amp; designer currently stationed in St. Catherine on the beautiful island of Jamaica.</p>
               <p class="pb-0 align-self-center align-self-md-start gw--p-adjustment">
-                  I've spent the last <strong>7+ years</strong> working on development projects from building out UIs to upgrading existing apps by adding features to make users happy. 
+                  I've spent the last <strong>7+ years</strong> working on development projects from building out user interfaces (UI) to upgrading existing apps by adding features to make users happy. 
                   I've touched on a few application types such as desktop and web (Single Page Apps, traditional, APIs) and more recently added designer to my list of skills and talents.
               </p>
               <p class="pb-0 align-self-center align-self-md-start gw--p-adjustment">
