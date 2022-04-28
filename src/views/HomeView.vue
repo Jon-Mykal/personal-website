@@ -18,7 +18,7 @@
           <section class="col-md-6 col-sm-12 py-5">
             <section class="wrapper d-flex px-3 flex-column pb-2 text-md-start">
               <p class="pb-0 align-self-center align-self-md-start gw--p-adjustment">
-                    It's never an easy thing to describe yourself since there are so many things to say but for starters, I am software developer who takes on design projects from time to time 
+                    It's never an easy thing to describe yourself since there are so many things to say but for starters, I am a software developer who takes on design projects from time to time 
                     (who says you can't be left-brained and right brained at the same time?). I can't share everything here but if you click the button I promise to tell you more.
               </p>
             </section>
