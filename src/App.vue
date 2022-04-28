@@ -42,9 +42,8 @@ import Footer from "@/components/Footer.vue"
 .img-frame {
   height: 25rem;
   width: 25rem;
-  background-image: url("https://via.placeholder.com/540");
+  background-image: url("./assets/Portrait\ of\ Gregg\ Cropped.png");
   background-size: cover;
-  border: 1px solid #dedede;
 
 }
 
