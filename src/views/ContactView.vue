@@ -162,10 +162,11 @@ export default {
               
               statusMessage = "Your message was sent. Thank you!";
               toast.add({ severity: 'success', summary: 'Notification', detail: statusMessage, life: 3500});
-              // pageData.fullName = "";
-              // pageData.email = "";
-              // pageData.message = "";
-              // pageData.currentSubjectLine = "";
+              pageData.fullName = "";
+              pageData.email = "";
+              pageData.message = "";
+              pageData.currentSubjectLine = "";
+              formConfig.resetForm();
               // console.log(res);
             })
             .catch(err => {
@@ -239,6 +240,7 @@ export default {
             subjectLine: pageData.currentSubjectLine,
             message: pageData.message
           });
+          
           vldtr.value = (await formConfig.validate()).results;
           canSubmit.value = formConfig.meta.value.valid;
         });
