@@ -162,10 +162,10 @@ export default {
               
               statusMessage = "Your message was sent. Thank you!";
               toast.add({ severity: 'success', summary: 'Notification', detail: statusMessage, life: 3500});
-              pageData.fullName = "";
-              pageData.email = "";
-              pageData.message = "";
-              pageData.currentSubjectLine = "";
+              // pageData.fullName = "";
+              // pageData.email = "";
+              // pageData.message = "";
+              // pageData.currentSubjectLine = "";
               // console.log(res);
             })
             .catch(err => {
