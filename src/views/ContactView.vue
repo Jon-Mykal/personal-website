@@ -166,6 +166,7 @@ export default {
               pageData.email = "";
               pageData.message = "";
               pageData.currentSubjectLine = "";
+              formConfig.resetForm();
               // console.log(res);
             })
             .catch(err => {
@@ -239,6 +240,7 @@ export default {
             subjectLine: pageData.currentSubjectLine,
             message: pageData.message
           });
+          
           vldtr.value = (await formConfig.validate()).results;
           canSubmit.value = formConfig.meta.value.valid;
         });

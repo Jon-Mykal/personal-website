@@ -26,7 +26,7 @@
               </p>
             </section>
             <section class="d-flex px-3 justify-content-center justify-content-md-start justify-content-sm-center">
-              <a class="btn gw--btn-main-blue rounded-pill px-4 gw--fs-7 text-uppercase" href="/docs/Gregg Wong Résumé.pdf">View Résumé</a>
+              <a class="btn gw--btn-main-blue rounded-pill px-4 gw--fs-7 text-uppercase" href="/docs/Gregg Wong Résumé (Final).pdf">View Résumé</a>
             </section>
           </section>
         </section>
