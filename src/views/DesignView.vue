@@ -85,6 +85,7 @@ import { ref, onMounted } from "vue";
 export default {
   setup() {
     onMounted(() => {
+      console.log(import.meta);
       const workData = [
         {
           name: "The Farmer's Gallery",
