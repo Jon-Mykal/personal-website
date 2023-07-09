@@ -90,40 +90,45 @@ export default {
       const workData = [
         {
           name: "The Farmer's Gallery",
-          image: import.meta.resolve(
-            "../assets/design/The Farmer's Gallery Main Logo.png"
+          image: new URL(
+            "../assets/design/The Farmer's Gallery Main Logo.png",
+            location.origin
           ),
           description: "Logo for The Farmer's Gallery",
           url: "https://dotnet.microsoft.com/en-us/apps/xamarin",
         },
         {
           name: "The Suitest Voice",
-          image: import.meta.resolve(
-            "../assets/design/The Suitest Voice_01 copy.png"
+          image: new URL(
+            "../assets/design/The Suitest Voice_01 copy.png",
+            location.origin
           ),
           description: "Logo for The Suitest Voice",
           url: "https://reactjs.org/",
         },
         {
           name: "Berly's Bags",
-          image: import.meta.resolve(
-            "../assets/design/Berlys Bags Brand Identity_Logo Main.png"
+          image: new URL(
+            "../assets/design/Berlys Bags Brand Identity_Logo Main.png",
+            location.origin
           ),
           description: "Logo for Berly's Bags",
           url: "https://azure.microsoft.com/en-us/",
         },
         {
           name: "LFW & Associates Consulting",
-          image: import.meta.resolve(
-            "../assets/design/LFW Consulting Post.png"
+          image: new URL(
+            "../assets/design/LFW Consulting Post.png",
+            location.origin
           ),
           description: "Instagram Post Design",
           url: "https://azure.microsoft.com/en-us/",
         },
         {
           name: "Birthday Invitation",
-          image: import.meta.resolve(
-            "../assets/design/Latona's Birthday Invitation.jpg"
+          image: new URL(
+            "../assets/design/Latona's Birthday Invitation.jpg",
+            location.origin
           ),
           description: "Flyer Design for a Birthday Party",
           url: "https://azure.microsoft.com/en-us/",
