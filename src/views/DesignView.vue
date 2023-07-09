@@ -91,7 +91,7 @@ export default {
         {
           name: "The Farmer's Gallery",
           image: new URL(
-            "../assets/design/The Farmer's Gallery Main Logo.png",
+            "/src/assets/design/The Farmer's Gallery Main Logo.png",
             location.origin
           ),
           description: "Logo for The Farmer's Gallery",
@@ -100,7 +100,7 @@ export default {
         {
           name: "The Suitest Voice",
           image: new URL(
-            "../assets/design/The Suitest Voice_01 copy.png",
+            "/src/assets/design/The Suitest Voice_01 copy.png",
             location.origin
           ),
           description: "Logo for The Suitest Voice",
@@ -109,7 +109,7 @@ export default {
         {
           name: "Berly's Bags",
           image: new URL(
-            "../assets/design/Berlys Bags Brand Identity_Logo Main.png",
+            "/src/assets/design/Berlys Bags Brand Identity_Logo Main.png",
             location.origin
           ),
           description: "Logo for Berly's Bags",
@@ -118,7 +118,7 @@ export default {
         {
           name: "LFW & Associates Consulting",
           image: new URL(
-            "../assets/design/LFW Consulting Post.png",
+            "/src/assets/design/LFW Consulting Post.png",
             location.origin
           ),
           description: "Instagram Post Design",
@@ -127,7 +127,7 @@ export default {
         {
           name: "Birthday Invitation",
           image: new URL(
-            "../assets/design/Latona's Birthday Invitation.jpg",
+            "/src/assets/design/Latona's Birthday Invitation.jpg",
             location.origin
           ),
           description: "Flyer Design for a Birthday Party",
