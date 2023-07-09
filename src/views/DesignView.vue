@@ -82,9 +82,10 @@
 
 <script>
 import { ref, onMounted } from "vue";
+
 export default {
   setup() {
-    onMounted(() => {
+    onMounted(async () => {
       console.log(import.meta);
       const workData = [
         {
@@ -131,23 +132,28 @@ export default {
       const toolsData = [
         {
           name: "Adobe Photoshop",
-          logo: import.meta.resolve(
-            "../assets/svgs/Adobe_Photoshop_CC_icon.svg"
+          logo: new URL(
+            "/src/assets/svgs/Adobe_Photoshop_CC_icon.svg",
+            location.origin
           ),
           description: "",
           url: "",
         },
         {
           name: "Adobe Illustrator",
-          logo: import.meta.resolve(
-            "../assets/svgs/Adobe_Illustrator_CC_icon.svg"
+          logo: new URL(
+            "/src/assets/svgs/Adobe_Illustrator_CC_icon.svg",
+            location.origin
           ),
           description: "",
           url: "",
         },
         {
           name: "Adobe XD",
-          logo: import.meta.resolve("../assets/svgs/Adobe_XD_CC_icon.svg"),
+          logo: new URL(
+            "/src/assets/svgs/Adobe_XD_CC_icon.svg",
+            location.origin
+          ),
           description: "",
           url: "",
         },
