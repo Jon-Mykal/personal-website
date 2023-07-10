@@ -97,15 +97,16 @@ export default {
         {
           name: "JNGI Online",
           image: import.meta.resolve(
-            "../assets/development/JNGI Online Presentation.png"
+            "/assets/development/JNGI Online Presentation.png"
           ),
           description: "E-Commerce website for JNGI Online",
           url: "https://www.jngionline.com/new/home",
         },
         {
           name: "SmartTerm",
-          image: "",
-          description: "Learning management",
+          image: "/assets/development/SmartTerm Presentation.png",
+          description: "Learning management system for the Caribbean",
+          url: "https://smartterm.io/",
         },
       ];
       const toolsData = [
