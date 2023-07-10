@@ -112,33 +112,27 @@ export default {
       const toolsData = [
         {
           name: "HTML",
-          logo: import.meta.resolve(
-            "../assets/svgs/HTML5_logo_and_wordmark.svg"
-          ),
+          logo: import.meta.resolve("/assets/svgs/HTML5_logo_and_wordmark.svg"),
           description: "",
           url: "",
         },
         {
           name: "CSS",
-          logo: import.meta.resolve(
-            "../assets/svgs/CSS3_logo_and_wordmark.svg"
-          ),
+          logo: import.meta.resolve("/assets/svgs/CSS3_logo_and_wordmark.svg"),
           description: "",
           url: "",
         },
         {
           name: "JavaScript",
           logo: import.meta.resolve(
-            "../assets/svgs/Unofficial-JavaScript-logo-2.svg"
+            "/assets/svgs/Unofficial-JavaScript-logo-2.svg"
           ),
           description: "Something <a href='https://vuejs.org'>Vue</a>",
           url: "",
         },
         {
           name: "C#",
-          logo: import.meta.resolve(
-            `../assets/svgs/c-sharp-c-seeklogo.com.svg`
-          ),
+          logo: import.meta.resolve(`/assets/svgs/c-sharp-c-seeklogo.com.svg`),
           description: "",
           url: "",
         },
@@ -149,7 +143,7 @@ export default {
     let workProjects = ref([]);
     let toolsUsed = ref([]);
 
-    // const re = require(`../assets/svgs/c-sharp-c-seeklogo.com.svg`);
+    // const re = require(`/assets/svgs/c-sharp-c-seeklogo.com.svg`);
     return { workProjects, toolsUsed };
   },
 };
