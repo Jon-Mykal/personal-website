@@ -90,7 +90,7 @@ export default {
         {
           name: "The Farmer's Gallery",
           image: import.meta.resolve(
-            "/src/assets/design/The Farmer's Gallery Main Logo.png"
+            "/assets/design/The Farmer's Gallery Main Logo.png"
           ),
           description: "Logo for The Farmer's Gallery",
           url: "https://dotnet.microsoft.com/en-us/apps/xamarin",
@@ -98,7 +98,7 @@ export default {
         {
           name: "The Suitest Voice",
           image: import.meta.resolve(
-            "/src/assets/design/The Suitest Voice_01 copy.png"
+            "/assets/design/The Suitest Voice_01 copy.png"
           ),
           description: "Logo for The Suitest Voice",
           url: "https://reactjs.org/",
@@ -106,23 +106,21 @@ export default {
         {
           name: "Berly's Bags",
           image: import.meta.resolve(
-            "/src/assets/design/Berlys Bags Brand Identity_Logo Main.png"
+            "/assets/design/Berlys Bags Brand Identity_Logo Main.png"
           ),
           description: "Logo for Berly's Bags",
           url: "https://azure.microsoft.com/en-us/",
         },
         {
           name: "LFW & Associates Consulting",
-          image: import.meta.resolve(
-            "/src/assets/design/LFW Consulting Post.png"
-          ),
+          image: import.meta.resolve("/assets/design/LFW Consulting Post.png"),
           description: "Instagram Post Design",
           url: "https://azure.microsoft.com/en-us/",
         },
         {
           name: "Birthday Invitation",
           image: import.meta.resolve(
-            "/src/assets/design/Latona's Birthday Invitation.jpg"
+            "/assets/design/Latona's Birthday Invitation.jpg"
           ),
           description: "Flyer Design for a Birthday Party",
           url: "https://azure.microsoft.com/en-us/",
@@ -131,23 +129,21 @@ export default {
       const toolsData = [
         {
           name: "Adobe Photoshop",
-          logo: import.meta.resolve(
-            "/src/assets/svgs/Adobe_Photoshop_CC_icon.svg"
-          ),
+          logo: import.meta.resolve("/assets/svgs/Adobe_Photoshop_CC_icon.svg"),
           description: "",
           url: "",
         },
         {
           name: "Adobe Illustrator",
           logo: import.meta.resolve(
-            "/src/assets/svgs/Adobe_Illustrator_CC_icon.svg"
+            "/assets/svgs/Adobe_Illustrator_CC_icon.svg"
           ),
           description: "",
           url: "",
         },
         {
           name: "Adobe XD",
-          logo: import.meta.resolve("/src/assets/svgs/Adobe_XD_CC_icon.svg"),
+          logo: import.meta.resolve("/assets/svgs/Adobe_XD_CC_icon.svg"),
           description: "",
           url: "",
         },

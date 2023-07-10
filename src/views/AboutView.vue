@@ -107,13 +107,13 @@ export default {
       const data = [
         {
           name: "Xamarin",
-          logo: import.meta.resolve("../assets/svgs/xamarin-seeklogo.com.svg"),
+          logo: import.meta.resolve("/assets/svgs/xamarin-seeklogo.com.svg"),
           description: "Far far away, behind the word mountains,",
           url: "https://dotnet.microsoft.com/en-us/apps/xamarin",
         },
         {
           name: "React",
-          logo: import.meta.resolve("../assets/svgs/React-icon.svg"),
+          logo: import.meta.resolve("/assets/svgs/React-icon.svg"),
           description: "Far far away, behind the word mountains,",
           url: "https://reactjs.org/",
         },
