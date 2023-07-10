@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "move-static": "cp -a ./node_modules/@pdftron/pdfjs-express-viewer/public/. ./dist/public/pdfjsexpress",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -26,9 +27,11 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "vite": "^4.4.2",
     "vue-loader": "^17.0.0",
     "vue-template-compiler": "^2.6.14"
   },
