@@ -86,49 +86,49 @@ import { ref, onMounted } from "vue";
 export default {
   setup() {
     onMounted(async () => {
-      console.log(import.meta);
+
       const workData = [
         {
           name: "The Farmer's Gallery",
-          image: new URL(
-            "/src/assets/design/The Farmer's Gallery Main Logo.png",
-            location.origin
+          image: import.meta.resolve(
+            "/src/assets/design/The Farmer's Gallery Main Logo.png"
+
           ),
           description: "Logo for The Farmer's Gallery",
           url: "https://dotnet.microsoft.com/en-us/apps/xamarin",
         },
         {
           name: "The Suitest Voice",
-          image: new URL(
-            "/src/assets/design/The Suitest Voice_01 copy.png",
-            location.origin
+          image: import.meta.resolve(
+            "/src/assets/design/The Suitest Voice_01 copy.png"
+
           ),
           description: "Logo for The Suitest Voice",
           url: "https://reactjs.org/",
         },
         {
           name: "Berly's Bags",
-          image: new URL(
-            "/src/assets/design/Berlys Bags Brand Identity_Logo Main.png",
-            location.origin
+          image: import.meta.resolve(
+            "/src/assets/design/Berlys Bags Brand Identity_Logo Main.png"
+
           ),
           description: "Logo for Berly's Bags",
           url: "https://azure.microsoft.com/en-us/",
         },
         {
-          name: "LFW & Associates Consulting",
-          image: new URL(
-            "/src/assets/design/LFW Consulting Post.png",
-            location.origin
+          name: "LFW & Associates Consulting"
+          image: import.meta.resolve(
+            "/src/assets/design/LFW Consulting Post.png"
+
           ),
           description: "Instagram Post Design",
           url: "https://azure.microsoft.com/en-us/",
         },
         {
           name: "Birthday Invitation",
-          image: new URL(
-            "/src/assets/design/Latona's Birthday Invitation.jpg",
-            location.origin
+          image: import.meta.resolve(
+            "/src/assets/design/Latona's Birthday Invitation.jpg"
+
           ),
           description: "Flyer Design for a Birthday Party",
           url: "https://azure.microsoft.com/en-us/",
@@ -137,27 +137,27 @@ export default {
       const toolsData = [
         {
           name: "Adobe Photoshop",
-          logo: new URL(
-            "/src/assets/svgs/Adobe_Photoshop_CC_icon.svg",
-            location.origin
+          logo: import.meta.resolve(
+            "/src/assets/svgs/Adobe_Photoshop_CC_icon.svg"
+
           ),
           description: "",
           url: "",
         },
         {
           name: "Adobe Illustrator",
-          logo: new URL(
-            "/src/assets/svgs/Adobe_Illustrator_CC_icon.svg",
-            location.origin
+          logo: import.meta.resolve(
+            "/src/assets/svgs/Adobe_Illustrator_CC_icon.svg"
+
           ),
           description: "",
           url: "",
         },
         {
           name: "Adobe XD",
-          logo: new URL(
-            "/src/assets/svgs/Adobe_XD_CC_icon.svg",
-            location.origin
+          logo: import.meta.resolve(
+            "/src/assets/svgs/Adobe_XD_CC_icon.svg"
+            g"
           ),
           description: "",
           url: "",
