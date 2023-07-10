@@ -18,8 +18,6 @@ export default {
     Footer,
   },
 };
-
-console.log(process);
 </script>
 
 <style>
