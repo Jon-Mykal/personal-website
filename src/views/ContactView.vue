@@ -1,6 +1,6 @@
 <template>
 <section class="contact mb-4">
-      
+  <div id="paypal-container-T7L2HME5MCAFW"></div>
       <Toast position="bottom-center"/>
       <!-- <Dialog header="Status" :style="{width: '50%', maxWidth: '40rem'}" v-model:visible="showPopup" :modal="true">
         <ProgressSpinner c />
@@ -67,20 +67,51 @@
                 <small v-if="!fieldIsValid('message')"  class="d-flex error">{{ showValMsg('message') }}</small>
               </section>
               <button class="btn gw--bg-main-blue w-100 rounded-pill py-275 text-uppercase" type="submit" :disabled="!canSubmit">Send Message</button>
+         
             </fieldset>
           </form>
+          
         </section>
       </section>
       </section>
+      
 </section>
 </template>
 
+
+
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=BAAodiQhdZBjE5gc-9Yufv-5Xd8w6JiBcTI7iYeghpHhIhIo79VvIjXM8JTynVot3HdDXO2I384rWVmK30&components=hosted-buttons&disable-funding=venmo&currency=USD"></script> -->
+
+<!-- <script>
+  paypal.HostedButtons({
+    hostedButtonId: "T7L2HME5MCAFW",
+  }).render("#paypal-container-T7L2HME5MCAFW")
+</script> -->
 <script>
 import { computed, onBeforeMount, reactive, toRefs, ref, watch } from 'vue';
 import { useField, useForm } from 'vee-validate';
 import { useToast } from "primevue/usetoast";
 import axios from 'axios';
 import * as yup from 'yup';
+
+import { loadScript } from "@paypal/paypal-js";
+
+let paypal;
+
+try {
+    paypal = await loadScript({ clientId: "ARFbgInA7bApoUOfyxwnyjyJf-a7l0EdVar3Uzx2QDWIc7bnt0qP_hSj7Czu1Lw5KUOKFQU__uRN9msy" });
+    console.log(paypal);
+} catch (error) {
+    console.error("failed to load the PayPal JS SDK script", error);
+}
+
+if (paypal) {
+    try {
+        await paypal.Buttons().render("#paypal-container-T7L2HME5MCAFW");
+    } catch (error) {
+        console.error("failed to render the PayPal Buttons", error);
+    }
+}
 
 export default {
     setup() {
