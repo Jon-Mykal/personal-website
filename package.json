@@ -13,6 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "@paypal/paypal-js": "^8.1.0",
     "@syncfusion/ej2-pdfviewer": "^19.4.56",
     "axios": "^0.26.1",
     "bootstrap": "^5.1.3",
