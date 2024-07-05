@@ -107,6 +107,12 @@ export default {
           image: "",
           description: "Learning management",
         },
+        {
+          name: "Virgin's International Trading",
+          image: "/assets/development/SmartTerm Presentation.png",
+          description: "",
+          url: "https://virginsintltrading.com/"
+        }
       ];
       const toolsData = [
         {
